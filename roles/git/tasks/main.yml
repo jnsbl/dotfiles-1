@@ -27,3 +27,10 @@
   template:
     src: "gitconfig.j2"
     dest: "{{dotfiles_user_home}}/.gitconfig"
+
+- name: Link git template dir
+  file:
+    src: "{{ dotfiles_home }}/roles/git/files/git_template.link"
+    dest: "{{ dotfiles_user_home }}/.git_template"
+    state: link
+    force: yes

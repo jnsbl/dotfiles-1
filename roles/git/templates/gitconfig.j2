@@ -1,5 +1,3 @@
-[hub]
-        protocol = https
 [user]
         name = {{ full_name }}
         email = {{ git_email }}
@@ -8,72 +6,109 @@
         helper = osxkeychain
 {% endif %}
 [alias]
-        a = add
-        st = status
-        s = status
-        co = checkout
-        cob = checkout -b
-        c = checkout
-        ci = commit
-        noff = merge --no-ff
-        amend = commit --amend
-        wip = commit -m "WIP"
-        br = branch
-        df = diff
-        dfs = diff --staged
-        # Get changes for a single commit
-        dfc = "!dfc() { git diff $1^ $1; }; dfc"
+        # add
+        a = add                           # add
+        chunkyadd = add --patch           # stage commits chunk by chunk
 
-        please = push --force-with-lease
+        # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+        snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+        snapshots = !git stash list --grep snapshot
 
-        # http://gggritso.com/human-git-aliases
-        unstage = reset -q HEAD --
-        discard = checkout --
-        uncommit = reset --mixed HEAD~
+        #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+        recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
-        l = log --graph --decorate --oneline --abbrev-commit --all
-        h = log --graph --decorate --oneline --abbrev-commit
+        # branch
+        b = branch -v                     # branch (verbose)
 
-        switch = !legit switch \"$@\"
-        branches = !legit branches
-        sprout = !legit sprout \"$@\"
-        unpublish = !legit unpublish \"$@\"
-        harvest = !legit harvest \"$@\"
-        sync = !legit sync \"$@\"
-        publish = !legit publish \"$@\"
-        graft = !legit graft \"$@\"
-        sw = !legit switch \"$@\"
+        # commit
+        c = commit -m                     # commit with message
+        ca = commit -am                   # commit all with message
+        ci = commit                       # commit
+        amend = commit --amend            # ammend your last commit
+        ammend = commit --amend           # ammend your last commit
 
-        issues = !hub browse -- issues
-        url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
-        # Copy current branch name to clipboard (MacOSX only)
-        cb = "!git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy"
+        # checkout
+        co = checkout                     # checkout
+        nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
 
-        remote-branches = "!f() { git ls-remote --heads ${1:origin} | sed 's?.*refs/heads/??'; }; f "
+        # cherry-pick
+        cp = cherry-pick -x               # grab a change from a branch
 
-        # Git flow
-        feature = flow feature start
-        finfeature = flow feature finish
-        fix = flow hotfix start
-        finfix = flow hotfix finish
-        release = flow release start
-        finrelease = flow release finish
+        # diff
+        d = diff                          # diff unstaged changes
+        dc = diff --cached                # diff staged changes
+        last = diff HEAD^                 # diff last committed change
 
-        sub = submodule
+        # log
+        l = log --graph --date=short
+        changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+        short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+        simple = log --pretty=format:\" * %s\"
+        shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+        # pull
+        pl = pull                         # pull
+
+        # push
+        ps = push                         # push
+
+        # rebase
+        rc = rebase --continue            # continue rebase
+        rs = rebase --skip                # skip rebase
+
+        # remote
+        r = remote -v                     # show remotes (verbose)
+
+        # reset
+        unstage = reset HEAD              # remove files from index (tracking)
+        uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+        filelog = log -u                  # show changes to a file
+        mt = mergetool                    # fire up the merge tool
+
+        # stash
+        ss = stash                        # stash changes
+        sl = stash list                   # list stashes
+        sa = stash apply                  # apply stash (restore changes)
+        sd = stash drop                   # drop stashes (destory changes)
+
+        # status
+        s = status                        # status
+        st = status                       # status
+        stat = status                     # status
+
+        # tag
+        t = tag -n                        # show tags with <n> lines of each tag message
+
+        ctags = !.git/hooks/ctags
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  ui = true
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red
+        new = green
 [core]
+        autocrlf = false
         excludesfile = ~/.gitignore_global
         editor = vim
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
+        prompt = false
 [difftool]
         prompt = false
+[difftool "sourcetree"]
+        cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+        path = 
+        trustExitCode = true
+[mergetool "sourcetree"]
+        cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+        trustExitCode = true
 [push]
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.
@@ -82,3 +117,23 @@
         default = simple
 [github]
         user = {{ git_user }}
+[format]
+        pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+[branch]
+        autosetupmerge = true
+[advice]
+        statusHints = false
+[merge]
+        summary = true
+        verbosity = 1
+[diff]
+        # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+        # instead of a/b/c/d as prefixes for patches
+        mnemonicprefix = true
+        algorithm = patience
+[rerere]
+        # Remember my merges
+        # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
+        enabled = true
+[init]
+        templatedir = ~/.git_template/
