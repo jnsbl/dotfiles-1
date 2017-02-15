@@ -3,4 +3,7 @@
 vim_install_plugins: no
 
 # Only used on OSX machines. Ignored on other platforms
-vim_install_macvim: yes
+vim_install_macvim: no
+
+# Use neovim config for regular vim
+create_vimrc_symlink: yes

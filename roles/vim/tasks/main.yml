@@ -10,26 +10,29 @@
 - name: Makes sure autoload directory exists
   file: path="{{dotfiles_user_home}}/.vim/autoload" state=directory
 
-- name: Install vim-plug
-  get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: "{{dotfiles_user_home}}/.vim/autoload/plug.vim"
-
-# Snippets
-- name: Makes sure UltiSnips directory exists
-  file: path="{{dotfiles_user_home}}/.vim/UltiSnips" state=directory
-
-- name: Symlink all snippet files
-  file:
-    src: "{{ dotfiles_home }}/roles/vim/files/{{item}}"
-    dest: "{{ dotfiles_user_home}}/.vim/UltiSnips/{{item}}"
-    state: link
-  with_items:
-    - "python.snippets"
-    - "rst.snippets"
-    - "javascript.snippets"
-
 # Configuration
+- name: Check if config/nvim exists
+  stat: path="{{dotfiles_user_home}}/.config/nvim"
+  register: config_nvim_stat
+  failed_when: False
+
+- name: Backup config/nvim
+  command: mv ~/.config/nvim ~/.config/nvim.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.config/nvim.bak"
+  when: config_nvim_stat.stat.exists
+
+- name: Config config dir
+  file:
+    path: "{{dotfiles_user_home}}/.config"
+    state: directory
+
+- name: Symlink config/nvim
+  file:
+    src: "{{ dotfiles_home }}/roles/vim/files/nvim.link"
+    dest: "{{dotfiles_user_home}}/.config/nvim"
+    state: link
+
 - name: Check if vimrc exists
   stat: path="{{dotfiles_user_home}}/.vimrc"
   register: vimrc_stat
@@ -43,10 +46,11 @@
 
 - name: Symlink vimrc
   file:
-    src: "{{ dotfiles_home }}/roles/vim/files/vimrc"
+    src: "{{ dotfiles_user_home }}/.config/nvim/init.vim"
     dest: "{{dotfiles_user_home}}/.vimrc"
     state: link
+  when: create_vimrc_symlink
 
 - name: Install plugins
-  command: vim +PlugInstall +qall
+  command: nvim +PlugInstall +qall
   when: vim_install_plugins
