@@ -15,8 +15,12 @@
     dest: "{{ '~/.zshrc' | expanduser }}"
     state: link
 
-- name: Link custom prompt
+- name: Prepare zsh.prompts dir
   file:
-    src: "{{ dotfiles_home }}/roles/zsh/files/prompt_sorin_simple_setup"
-    dest: "{{ '~/.zprezto/modules/prompt/functions/prompt_sorin_simple_setup' | expanduser }}"
-    state: link
+    path: "{{ dotfiles_user_home }}/.zsh.prompts"
+    state: directory
+
+- name: Get Garrett prompt
+  get_url:
+    url: https://github.com/chauncey-garrett/zsh-prompt-garrett/raw/master/prompt_garrett_setup
+    dest: "{{ dotfiles_user_home }}/.zsh.prompts/prompt_garrett_setup"
