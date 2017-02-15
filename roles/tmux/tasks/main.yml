@@ -6,10 +6,6 @@
 
 # TODO: Fedora
 
-- name: Install tmuxp
-  pip: name=tmuxp state=latest
-  when: tmux_install_tmuxp
-
 - name: Install tpm
   git:
     repo: https://github.com/tmux-plugins/tpm
@@ -30,3 +26,9 @@
     dest: "{{dotfiles_user_home}}/.tmux.conf"
     state: link
   when: ansible_os_family == "Darwin"
+
+- include: tmuxifier.yml
+  when: tmux_install_tmuxifier
+
+- include: tmuxinator.yml
+  when: tmux_install_tmuxinator

@@ -1,0 +1,12 @@
+
+- name: Clone tmuxifier
+  git:
+    repo: https://github.com/jimeh/tmuxifier.git
+    dest: "{{ '~/.tmuxifier' | expanduser}}"
+    update: no
+
+- name: Symlink tmuxifier.zsh
+  file:
+    src: "{{ dotfiles_home }}/roles/tmux/files/tmuxifier.zsh"
+    dest: "{{dotfiles_user_home}}/.zsh.after"
+    state: link

@@ -13,4 +13,5 @@ git_user: jnsbl
 #  used on Github
 git_email: 21-1@unicornuniverse.eu
 
-tmux_install_tmuxp: false
+tmux_install_tmuxinator: no
+tmux_install_tmuxifier: no

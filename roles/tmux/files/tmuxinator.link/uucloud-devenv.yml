@@ -1,0 +1,42 @@
+# ~/.tmuxinator/uucloud-devenv.yml
+
+name: uucloud-devenv
+root: ~/code/work/git/uu.cloud/uu_cloud-devenv
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre: export _UUCLOUD_DEVENV_PREFER_DOCKER_TOOLBOX=false
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+# pre_window: eval $(docker-machine env uucloud) # don't need this anymore when using Docker for Mac :)
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t uucloud-devenv
+
+windows:
+  - devenv-src:
+      layout: even-horizontal
+      panes:
+        - e docker-compose.yml
+        - e Rakefile
+  - devenv-shell: rake uucloud:status
+  - demoapp-src: cd ../cds_beaver-server && e app/cds_beaver/server/controllers/log.rb Rakefile
+  - demoapp-shell: cd ../cds_beaver-server
+  - c3-appbox: cd ~/code/work/git/uu.c3/uu_c3-appbox
+  - or-appbox: cd ~/code/work/git/uu.operationregistry/uu_operation_registry-appbox
