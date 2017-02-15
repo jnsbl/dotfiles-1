@@ -1,5 +1,12 @@
-- name: Install ruby with Homebrew
-  homebrew: name=ruby state=present
-  when: ansible_os_family == "Darwin"
+#- name: Install ruby with Homebrew
+#  homebrew: name=ruby state=present
+#  when: ansible_os_family == "Darwin"
 
 # TODO: Fedora and Debian
+
+- name: Symlink gemrc
+  file:
+    src: "{{ dotfiles_home }}/roles/ruby/files/gemrc"
+    dest: "{{dotfiles_user_home}}/.gemrc"
+    state: link
+    
