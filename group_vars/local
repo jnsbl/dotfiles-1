@@ -23,10 +23,12 @@ git_email: 21-1@unicornuniverse.eu
 vim_install_plugins: no
 
 
-# Utiliities that don't get installed by a role
+# Utilities that don't get installed by a role
 osx_homebrew_packages:
+  - cabextract # for winetricks
   - ctags
   - fasd
+  - go # for fzf
   - fzf
   - gibo
   - git
@@ -34,24 +36,32 @@ osx_homebrew_packages:
   - gnutls
   - htop
   - imagemagick
+  - libgphoto2 # for wine
+  - little-cms2 # for wine
+  - libicns # for wine
+  - makedepend # for openssl
   - mas
+  - msgpack # for neovim
   - mtr
   - multimarkdown
   - neovim
   - openssl
   - p7zip
+  - sphinx-doc # for python
   - python
   - pyenv
   - rbenv
-  - rbenv-gem-rehash
+#  - rbenv-gem-rehash # deprecated
   - reattach-to-user-namespace
+  - sane-backends # for wine
   - ruby-build
   - the_silver_searcher
   - tmux
   - tree
   - unrar
-  - wine
-  - winetricks
+#  - wine # requires xquartz cask
+#  - winetricks
+  - texi2html # for zsh
   - zsh
 
 # Mac Apps to be installed with homebrew-cask
@@ -62,6 +72,7 @@ osx_cask_packages:
   - appcleaner
   - awareness
   - bartender
+  - cyberduck
   - daisydisk
   - dash
   - dropbox
@@ -85,14 +96,16 @@ osx_cask_packages:
   - sourcetree
   - sublime-text
   - teamviewer
-  - textwrangler
+#  - textwrangler
   - the-unarchiver
   - toggldesktop
   - veracrypt
+  - vimr
   - virtualbox
   - viscosity
   - vlc
   - xee
+  - xquartz # for wine
   # QuickLook plugins
   - betterzipql
   - provisionql
