@@ -82,7 +82,6 @@ osx_cask_packages:
   - firefox
   - flux
   - google-chrome
-  - hammerspoon
   - handbrake
   - iterm2
   - karabiner-elements

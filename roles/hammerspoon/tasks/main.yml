@@ -1,0 +1,20 @@
+
+- name: Install Hammerspoon with homebrew cask
+  homebrew_cask: name=hammerspoon state=present
+
+- name: Create ~/.hammerspoon
+  file:
+    path: "{{dotfiles_user_home}}/.hammerspoon"
+    state: directory
+
+- name: Symlink init.lua
+  file:
+    src: "{{ dotfiles_home }}/roles/hammerspoon/files/init.lua"
+    dest: "{{dotfiles_user_home}}/.hammerspoon/init.lua"
+    state: link
+
+- name: Symlink modalmgr.lua
+  file:
+    src: "{{ dotfiles_home }}/roles/hammerspoon/files/modalmgr.lua"
+    dest: "{{dotfiles_user_home}}/.hammerspoon/modalmgr.lua"
+    state: link
