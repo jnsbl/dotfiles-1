@@ -7,14 +7,14 @@
   roles:
     - git
     - {role: package_manager, tags: ['bootstrap']}
-    - {role: zsh, tags: ['bootstrap']}
+#    - {role: zsh, tags: ['bootstrap']}
     - vim
-    - python
-    - npm
-    - hub
-    - autoenv
-    - ag
-    - tmux
-    - git-flow
-    - fzf
+#    - python
+#    - npm
+#    - hub
+#    - autoenv
+#    - ag
+#    - tmux
+#    - git-flow
+#    - fzf
     - {role: osx, when: ansible_os_family == "Darwin"}
