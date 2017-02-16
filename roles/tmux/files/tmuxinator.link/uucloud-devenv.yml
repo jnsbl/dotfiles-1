@@ -8,7 +8,7 @@ root: ~/code/work/git/uu.cloud/uu_cloud-devenv
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
-pre: export _UUCLOUD_DEVENV_PREFER_DOCKER_TOOLBOX=false
+pre: export _UUCLOUD_DEVENV_PREFER_DOCKER_TOOLBOX=true
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
