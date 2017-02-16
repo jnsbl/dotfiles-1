@@ -93,6 +93,8 @@ osx_cask_packages:
   - skype
   - slack
   - sourcetree
+  - spotify
+  - spotify-notifications
   - sublime-text
   - teamviewer
 #  - textwrangler
