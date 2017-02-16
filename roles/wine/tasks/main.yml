@@ -1,0 +1,10 @@
+
+- name: Install XQuartz with Homebrew Cask
+  homebrew_cask: name=xquartz state=present
+  when: ansible_os_family == "Darwin"
+
+- name: Install Wine with Homebrew
+  homebrew: name={{item}} state=present
+  with_items:
+    - wine
+    - winetricks
