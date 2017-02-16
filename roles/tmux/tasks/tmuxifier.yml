@@ -8,5 +8,5 @@
 - name: Symlink tmuxifier.zsh
   file:
     src: "{{ dotfiles_home }}/roles/tmux/files/tmuxifier.zsh"
-    dest: "{{dotfiles_user_home}}/.zsh.after"
+    dest: "{{dotfiles_user_home}}/.zsh.after/tmuxifier.zsh"
     state: link
