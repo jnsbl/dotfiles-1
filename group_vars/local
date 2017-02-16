@@ -70,6 +70,7 @@ osx_cask_packages:
   - adium
   - alfred
   - appcleaner
+  - atext
   - awareness
   - bartender
   - cyberduck
