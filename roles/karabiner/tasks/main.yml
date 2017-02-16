@@ -1,0 +1,11 @@
+
+- name: Prepare .config/karabiner dir
+  file:
+    path: "{{dotfiles_user_home}}/.config/karabiner"
+    state: directory
+
+- name: Symlink karabiner.json
+  file:
+    src: "{{ dotfiles_home }}/roles/karabiner/files/karabiner.json"
+    dest: "{{dotfiles_user_home}}/.config/karabiner/karabiner.json"
+    state: link
