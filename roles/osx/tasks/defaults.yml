@@ -122,9 +122,9 @@
 - name: Set a fast keyboard repeat delay
   osx_defaults:
     domain: NSGlobalDomain
-    key: KeyRepeat
+    key: InitialKeyRepeat
     type: int
-    value: 15
+    value: 25
     state: present
 
 - name: Disable auto-correct
