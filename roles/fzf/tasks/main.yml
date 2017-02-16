@@ -1,3 +1,10 @@
+
 - name: Install fzf with Homebrew
   homebrew: name=fzf state=latest
   when: ansible_os_family == "Darwin"
+
+- name: Symlink fzf.zsh
+  file:
+    src: "{{ dotfiles_home }}/roles/fzf/files/fzf.zsh"
+    dest: "{{dotfiles_user_home}}/.zsh.after/fzf.zsh"
+    state: link

@@ -24,3 +24,13 @@
 - name: Copy minimal zshrc
   copy: src=zshrc_minimal dest={{dotfiles_user_home}}/.zshrc
   when: not zsh_prezto
+
+- name: Prepare .zsh.before dir for pre-init hooks
+  file:
+    path: "{{dotfiles_user_home}}/.zshrc.before"
+    state: directory
+
+- name: Prepare .zsh.after dir for post-init hooks
+  file:
+    path: "{{dotfiles_user_home}}/.zshrc.after"
+    state: directory

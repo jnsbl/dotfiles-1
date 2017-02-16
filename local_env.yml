@@ -14,10 +14,10 @@
 #    - npm
 #    - hub
 #    - autoenv
-#    - ag
+    - ag
+    - fzf
     - tmux
 #    - git-flow
-#    - fzf
     - {role: karabiner, when: ansible_os_family == "Darwin"}
     - {role: hammerspoon, when: ansible_os_family == "Darwin"}
     - {role: osx, when: ansible_os_family == "Darwin", tags: ['bootstrap']}
