@@ -1,6 +1,4 @@
-- name: Set system defaults
-  script: set-defaults.sh
-  changed_when: false
+- include: defaults.yml
 
 - name: Tap into neovim/neovim
   homebrew_tap: tap=neovim/neovim state=present

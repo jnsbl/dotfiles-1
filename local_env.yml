@@ -19,4 +19,4 @@
 #    - git-flow
 #    - fzf
     - {role: hammerspoon, when: ansible_os_family == "Darwin"}
-    - {role: osx, when: ansible_os_family == "Darwin"}
+    - {role: osx, when: ansible_os_family == "Darwin", tags: ['bootstrap']}
