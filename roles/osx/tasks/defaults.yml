@@ -481,13 +481,5 @@
     value: true
     state: present
 
-- name: Disable Swipe controls for Google Chrome
-  osx_defaults:
-    domain: com.google.Chrome
-    key: AppleEnableSwipeNavigateWithScrolls
-    type: bool
-    value: false
-    state: present
-
 - name: Kill affected applications
   script: kill_apps.sh
