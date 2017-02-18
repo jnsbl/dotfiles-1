@@ -22,3 +22,4 @@
     - {role: hammerspoon, when: ansible_os_family == "Darwin"}
     - {role: osx, when: ansible_os_family == "Darwin", tags: ['bootstrap']}
     - {role: wine, when: ansible_os_family == "Darwin", tags: ['bootstrap']}
+    - {role: geerlingguy.mas, when: ansible_os_family == "Darwin", tags: ['bootstrap']}

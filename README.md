@@ -33,6 +33,8 @@ install
 # NOTE: It is important that you clone to ~/dotfiles
 $ git clone https://github.com/YOU/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
+# Install required Ansible roles
+$ sudo ansible-galaxy install -r requirements.yml
 ```
 
 - Update the following variables in `group_vars/local` (at a minimum)

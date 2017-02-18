@@ -76,7 +76,7 @@ osx_cask_packages:
   - dash
   - dropbox
   - evernote
-  - fantastical
+  - fantastical # TODO Install version 1.x (don't have license for 2.x)
   - filezilla
   - firefox
   - flux
@@ -118,6 +118,20 @@ osx_cask_packages:
   - quicklook-json
   - suspicious-package
   - webpquicklook
+
+mas_installed_apps:
+  - { id: 937984704,  name: "Amphetamine" }
+  - { id: 846717884,  name: "Instant Convert" }
+  - { id: 816850863,  name: "Instant Resize" }
+  - { id: 720669838,  name: "iThoughtsX" }
+  - { id: 1189824719, name: "Jayson" }
+  - { id: 587512244,  name: "Kaleidoscope" }
+  - { id: 748212890,  name: "Memory Cleaner" }
+  - { id: 607997198,  name: "Marko" }
+  - { id: 407963104,  name: "Pixelmator" }
+  - { id: 924891282,  name: "Pixave" }
+  - { id: 1176895641, name: "Spark" }
+  - { id: 585829637,  name: "Todoist" }
 
 # Node utilities
 npm_global_packages:
