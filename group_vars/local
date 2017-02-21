@@ -88,6 +88,7 @@ osx_cask_packages:
   - movist
   - nvalt
   - path-finder
+  - postman
   - robomongo
   - skype
   - slack
