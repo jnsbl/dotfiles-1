@@ -466,12 +466,13 @@
     value: false
     state: present
 
-- name: Reset Launchpad
-  file:
-    path: "{{ item }}"
-    state: absent
-  with_fileglob:
-    - "{{ dotfiles_user_home }}/Library/Application\ Support/Dock/*.db"
+# Don't know why is this needed; the only thing it does is resetting wallpapers on all spaces :/
+#- name: Reset Launchpad
+#  file:
+#    path: "{{ item }}"
+#    state: absent
+#  with_fileglob:
+#    - "{{ dotfiles_user_home }}/Library/Application\ Support/Dock/*.db"
 
 - name: Prevent Time Machine from prompting to use new hard drives as backup volume
   osx_defaults:
