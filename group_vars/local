@@ -50,11 +50,8 @@ osx_homebrew_packages:
   - sphinx-doc # for python
   - python
   - pyenv
-  - rbenv
-#  - rbenv-gem-rehash # deprecated
   - reattach-to-user-namespace
   - sane-backends # for wine
-  - ruby-build
   - the_silver_searcher
   - tmux
   - tree
@@ -137,3 +134,22 @@ mas_installed_apps:
 # Node utilities
 npm_global_packages:
   - yo
+
+# rbenv
+
+rbenv_ruby_versions:
+  - 2.2.X
+  - jruby-1.7.21
+rbenv_plugins:
+  - name: "ruby-build"
+    repo: "https://github.com/rbenv/ruby-build.git"
+  - name: "rbenv-default-gems"
+    repo: "https://github.com/rbenv/rbenv-default-gems.git"
+  - name: "rbenv-installer"
+    repo: "https://github.com/rbenv/rbenv-installer.git"
+  - name: "rbenv-update"
+    repo: "https://github.com/rkh/rbenv-update.git"
+  - name: "rbenv-ctags"
+    repo: "https://github.com/tpope/rbenv-ctags.git"
+rbenv_profile_path: "{{ dotfiles_user_home }}/.zsh.after/rbenv.zsh"
+default_gems_file: roles/ruby/files/default-gems

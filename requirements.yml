@@ -1,2 +1,4 @@
 ---
 - name: geerlingguy.mas
+- name: kota65535.rbenv
+  src: https://github.com/jnsbl/ansible-role-rbenv

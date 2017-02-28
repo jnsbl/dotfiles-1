@@ -9,6 +9,7 @@
     - {role: package_manager, tags: ['bootstrap']}
     - {role: zsh, tags: ['bootstrap']}
     - vim
+    - kota65535.rbenv
     - ruby
 #    - python
 #    - npm
