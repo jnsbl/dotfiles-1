@@ -12,7 +12,7 @@ end)
 hs.notify.show("Hammerspoon", "", "Config loaded")
 -- }}}
 
-require("modalmgr")
+-- require("modalmgr") -- XXX Alt+Tab seems to break Hyper key bindings (Hammerspoon config reload fixes it again)
 
 --------------------------------------------------------------------------------
 -- Hyper key {{{
