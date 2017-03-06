@@ -1,0 +1,1 @@
+st3_home: "{{ dotfiles_user_home | expanduser }}/Library/Application Support/Sublime Text 3"

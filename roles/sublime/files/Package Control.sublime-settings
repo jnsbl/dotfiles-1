@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ChangeQuotes",
+		"Colorsublime",
+		"Dockerfile Syntax Highlighting",
+		"Emmet",
+		"HTML-CSS-JS Prettify",
+		"HTMLEntity Snippets",
+		"Indent XML",
+		"JSON Reindent",
+		"Package Control",
+		"RuboCop",
+		"SublimeLinter-xmllint",
+		"Table Editor",
+		"TrailingSpaces"
+	]
+}

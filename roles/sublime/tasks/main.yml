@@ -1,0 +1,54 @@
+
+- name: Check ~/.config/sublime-text-3/Installed Packages exists
+  file:
+    path: "{{ st3_home }}/Installed Packages"
+    state: directory
+
+- name: Check ~/.config/sublime-text-3/Packages/User exists
+  file:
+    path: "{{ st3_home }}/Packages/User"
+    state: directory
+
+- name: Check Package Control is downloaded
+  get_url:
+    url: https://packagecontrol.io/Package%20Control.sublime-package
+    dest: "{{ st3_home }}/Installed Packages/Package Control.sublime-package"
+
+- name: Check base16 color schemes are downloaded
+  git:
+    repo: https://github.com/chriskempson/base16-textmate.git
+    dest: "{{ st3_home }}/Packages/User/Base16"
+
+- name: Check if Package Control's package list exists
+  stat: path="{{ st3_home }}/Packages/User/Package Control.sublime-settings"
+  register: package_control
+  failed_when: False
+
+- name: Backup Package Control's package list
+  command: mv "{{ st3_home }}/Packages/User/Package Control.sublime-settings" "{{ st3_home }}/Packages/User/Package Control.sublime-settings.bak"
+  args:
+    creates: "{{ st3_home }}/Packages/User/Package Control.sublime-settings.bak"
+  when: package_control.stat.exists
+
+- name: Check if symlink for Package Control's package list exists
+  file:
+    src: "{{ dotfiles_home }}/roles/sublime/files/Package Control.sublime-settings"
+    dest: "{{ st3_home }}/Packages/User/Package Control.sublime-settings"
+    state: link
+
+- name: Check if Sublime Text 3 preferences file exists
+  stat: path="{{ st3_home }}/Packages/User/Preferences.sublime-settings"
+  register: st3_preferences
+  failed_when: False
+
+- name: Backup Sublime Text 3 preferences file
+  command: mv "{{ st3_home }}/Packages/User/Preferences.sublime-settings" "{{ st3_home }}/Packages/User/Preferences.sublime-settings.bak"
+  args:
+    creates: "{{ st3_home }}/Packages/User/Preferences.sublime-settings.bak"
+  when: st3_preferences.stat.exists
+
+- name: Check if symlink for Sublime Text 3 preferences file exists
+  file:
+    src: "{{ dotfiles_home }}/roles/sublime/files/Preferences.sublime-settings"
+    dest: "{{ st3_home }}/Packages/User/Preferences.sublime-settings"
+    state: link
