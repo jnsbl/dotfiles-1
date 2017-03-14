@@ -102,7 +102,7 @@ osx_cask_packages:
   - virtualbox
   - viscosity
   - vlc
-  - xee
+#  - xee # this is Xee 3 - commercial and worse than Xee 2
   # QuickLook plugins
   - betterzipql
   - provisionql
@@ -117,6 +117,7 @@ osx_cask_packages:
   - suspicious-package
   - webpquicklook
 
+# Mac Apps to be installed from App Store
 mas_installed_apps:
   - { id: 937984704,  name: "Amphetamine" }
   - { id: 846717884,  name: "Instant Convert" }
@@ -136,7 +137,6 @@ npm_global_packages:
   - yo
 
 # rbenv
-
 rbenv_ruby_versions:
   - 2.2.X
   - jruby-1.7.21
