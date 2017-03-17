@@ -73,13 +73,13 @@ osx_cask_packages:
   - dash
   - dropbox
   - evernote
-  - fantastical # TODO Install version 1.x (don't have license for 2.x)
   - filezilla
   - firefox
   - flux
   - google-chrome
   - handbrake
   - iterm2
+  - itsycal
   - karabiner-elements
   # - libreoffice # TODO Install a particular version (supported by +4U LibreOffice extensions)
   - movist
