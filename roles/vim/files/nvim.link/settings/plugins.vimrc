@@ -9,7 +9,7 @@ if exists("neovim_dot_app")
 else
   set background=dark
   let base16colorspace=256
-  colorscheme base16-tomorrow-night
+  colorscheme base16-eighties
 endif
 
 " -----------------------------------------------------------------------------
