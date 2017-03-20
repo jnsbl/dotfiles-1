@@ -34,3 +34,9 @@
     dest: "{{ dotfiles_user_home }}/.git_template"
     state: link
     force: yes
+
+- name: Link git commit message template
+  file:
+    src: "{{ dotfiles_home }}/roles/git/files/git_commit_msg.txt"
+    dest: "{{ dotfiles_user_home }}/.git_commit_msg.txt"
+    state: link
