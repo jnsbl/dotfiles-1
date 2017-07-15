@@ -67,6 +67,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/gv.vim'
 Plug 'pearofducks/ansible-vim'
+Plug 'tonekk/vim-binding-pry'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
