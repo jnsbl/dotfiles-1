@@ -42,6 +42,7 @@ Plug 'xsunsmile/showmarks'
 Plug 'godlygeek/csapprox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'trevordmiller/nova-vim'
 
 " Languages and Syntax highlighting
 Plug 'vim-ruby/vim-ruby'
