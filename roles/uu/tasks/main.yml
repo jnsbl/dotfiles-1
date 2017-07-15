@@ -1,0 +1,11 @@
+
+- name: Make sure ~/.uu/config exists
+  file:
+    path: "{{dotfiles_user_home}}/.uu/config"
+    state: directory
+
+- name: Symlink uu-client configurations
+  file:
+    src: "{{ dotfiles_home }}/roles/uu/files/uu-client.link"
+    dest: "{{dotfiles_user_home}}/.uu/config/uu-client"
+    state: link
