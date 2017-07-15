@@ -22,6 +22,7 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'moll/vim-bbye'
+Plug 'freitass/todo.txt-vim'
 
 " Search
 " Plug 'justinmk/vim-sneak'
