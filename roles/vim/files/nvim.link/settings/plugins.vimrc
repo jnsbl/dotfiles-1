@@ -20,6 +20,11 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 " -----------------------------------------------------------------------------
+" Plugin Settings - Bbye
+
+nnoremap <Leader>q :Bdelete<CR>
+
+" -----------------------------------------------------------------------------
 " Plugin Settings - CtrlP
 
 if exists("g:ctrlp_user_command")

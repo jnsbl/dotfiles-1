@@ -21,6 +21,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'moll/vim-bbye'
 
 " Search
 " Plug 'justinmk/vim-sneak'
