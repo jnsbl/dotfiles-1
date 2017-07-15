@@ -250,3 +250,6 @@ alias tas='tmux attach-session -t'
 alias tnew='tmux new-session -As $(echo `basename $PWD` | tr '.' '-')' # http://tilvim.com/2014/07/30/tmux-and-vim.html
 alias tdev='tmux -f ~/.dev.tmux.conf attach'
 alias mux='tmuxinator'
+
+# DNS resolving
+alias dns='dscacheutil -q host -a name'
