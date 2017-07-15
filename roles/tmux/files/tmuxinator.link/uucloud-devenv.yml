@@ -1,7 +1,7 @@
 # ~/.tmuxinator/uucloud-devenv.yml
 
 name: uucloud-devenv
-root: ~/code/work/git/uu.cloud/uu_cloud-devenv
+root: ~/code/work/git/uu_cloudg01_c3-server-ruby/uu_cloud-devenv
 
 # Optional tmux socket
 # socket_name: foo
@@ -36,7 +36,7 @@ windows:
         - e docker-compose.yml
         - e Rakefile
   - devenv-shell: rake uucloud:status
-  - demoapp-src: cd ../cds_beaver-server && e app/cds_beaver/server/controllers/log.rb Rakefile
-  - demoapp-shell: cd ../cds_beaver-server
-  - c3-appbox: cd ~/code/work/git/uu.c3/uu_c3-appbox
-  - or-appbox: cd ~/code/work/git/uu.operationregistry/uu_operation_registry-appbox
+  - demoapp-src: cd ~/code/work/git/uu.cloud/cds_beaver-server && e app/cds_beaver/server/controllers/log.rb Rakefile
+  - demoapp-shell: cd ~/code/work/git/uu.cloud/cds_beaver-server
+  - c3-appbox: cd ~/code/work/git/uu_cloudg01_c3-server-ruby/uu_c3-appbox
+  - or-appbox: cd ~/code/work/git/uu_cloudg01_registry-server-ruby/uu_operation_registry-appbox
