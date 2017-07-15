@@ -2,5 +2,6 @@
 path=(
   $path
   $HOME/bin
+  $HOME/dotfiles/bin
 )
 
