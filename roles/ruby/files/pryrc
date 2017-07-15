@@ -1,0 +1,5 @@
+def uu_login(credentials = nil)
+  require 'uu/os/security/session'
+  credentials ||= '21-1'
+  UU::OS::Security::Session.login(credentials)
+end
