@@ -153,3 +153,4 @@ rbenv_plugins:
     repo: "https://github.com/tpope/rbenv-ctags.git"
 rbenv_profile_path: "{{ dotfiles_user_home }}/.zsh.after/rbenv.zsh"
 default_gems_file: roles/ruby/files/default-gems
+gemrc_file: roles/ruby/files/gemrc

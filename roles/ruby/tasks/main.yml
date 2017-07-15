@@ -1,17 +1,17 @@
 
-- name: Check if gemrc exists
-  stat: path="{{dotfiles_user_home}}/.gemrc"
-  register: gemrc_stat
-  failed_when: False
-
-- name: Backup gemrc
-  command: mv ~/.gemrc ~/.gemrc.bak
-  args:
-    creates: "{{dotfiles_user_home}}/.gemrc.bak"
-  when: gemrc_stat.stat.exists
-
-- name: Symlink gemrc
-  file:
-    src: "{{ dotfiles_home }}/roles/ruby/files/gemrc"
-    dest: "{{dotfiles_user_home}}/.gemrc"
-    state: link
+#- name: Check if gemrc exists
+#  stat: path="{{dotfiles_user_home}}/.gemrc"
+#  register: gemrc_stat
+#  failed_when: False
+#
+#- name: Backup gemrc
+#  command: mv ~/.gemrc ~/.gemrc.bak
+#  args:
+#    creates: "{{dotfiles_user_home}}/.gemrc.bak"
+#  when: gemrc_stat.stat.exists
+#
+#- name: Symlink gemrc
+#  file:
+#    src: "{{ dotfiles_home }}/roles/ruby/files/gemrc"
+#    dest: "{{dotfiles_user_home}}/.gemrc"
+#    state: link
