@@ -90,14 +90,16 @@ let g:startify_custom_header = s:filter_header([
   \ '',
   \ ])
 let g:startify_bookmarks = [
-  \ {'v': '~/.config/nvim/init.vim'},
-  \ {'b': '~/Dropbox/Work/inbox.txt'},
+  \ {'v': '~/.config/nvim/settings/init.vimrc'},
+  \ {'g': '~/.config/nvim/settings/general.vimrc'},
+  \ {'p': '~/.config/nvim/settings/plugins.vimrc'},
   \ {'u': '~/.uu/config/uu-client.properties'},
-  \ {'l': '~/.uu/config/log4r.xml'},
   \ {'y': '~/.pry_history'},
   \ {'h': '~/.hammerspoon/init.lua'},
   \ {'t': '~/.tmux.conf'},
   \ {'r': '~/.config/karabiner/karabiner.json'},
+  \ {'w': '~/code/work/git/uu_cloudg01_c3-server-ruby/create_asids_awids.rb'},
+  \ {'d': '~/Dropbox/todo.txt'},
   \ ]
 
 " -----------------------------------------------------------------------------
