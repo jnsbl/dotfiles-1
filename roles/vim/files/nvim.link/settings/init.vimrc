@@ -5,6 +5,10 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+" https://github.com/tweekmonster/nvim-python-doctor/wiki/Advanced:-Using-pyenv
+" let g:python_host_prog = '/Users/jnsbl/.pyenv/versions/2.7.9/envs/py27/bin/python'
+" let g:python3_host_prog = '/Users/jnsbl/.pyenv/versions/3.5.3/envs/py35/bin/python'
+
 " TODO K pluginum specifickym pro Neovim (napr. Deoplete) najit alternativu pro Vim
 
 call plug#begin('~/.vim/plugged')
@@ -84,6 +88,8 @@ else
   Plug 'Shougo/neocomplete.nvim'
 end
 Plug 'Shougo/neco-vim'
-Plug 'SirVer/ultisnips'
+if has('python3') || has('python')
+  Plug 'SirVer/ultisnips'
+end
 Plug 'honza/vim-snippets'
 call plug#end()
