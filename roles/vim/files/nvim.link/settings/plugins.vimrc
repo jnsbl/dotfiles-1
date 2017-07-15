@@ -282,11 +282,17 @@ nnoremap <silent> <Leader>a :ArgWrap<CR>
 
 " http://stackoverflow.com/a/28524118
 if $PATH !~ "\.rbenv"
-    let $PATH="/Users/uni380/.rbenv/shims:/Users/uni380/.rbenv/bin:" . $PATH
+    let $PATH="/Users/jnsbl/.rbenv/shims:/Users/jnsbl/.rbenv/bin:" . $PATH
 endif
 
 let test#ruby#minitest#file_pattern = 'test_.*\.rb'
-let test#ruby#bundle_exec = 0
+let test#ruby#bundle_exec = 1
+
+if exists("g:VimuxTmuxCommand")
+  let test#strategy = "vimux"
+elseif has("nvim")
+  let test#strategy = "neovim"
+endif
 
 nnoremap <silent> <Leader>tn :TestNearest<CR>
 nnoremap <silent> <Leader>tf :TestFile<CR>
