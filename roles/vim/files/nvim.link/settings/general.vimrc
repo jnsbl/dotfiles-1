@@ -19,15 +19,15 @@ endif
 " -----------------------------------------------------------------------------
 " Options - Behaviour
 
-autocmd BufRead * filetype detect
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
 
 set hidden
 set autoread
 set nowrap
 autocmd FileType markdown setlocal wrap
-
-" if no filetype specified, set ft=markdown (alternative would be text)
-autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
 
 autocmd BufRead,BufNewFile *.bork set filetype=sh
 

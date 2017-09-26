@@ -1,3 +1,5 @@
+set nocompatible
+
 " Automatically install vim-plug and run PlugInstall if vim-plug not found
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -51,13 +53,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'trevordmiller/nova-vim'
 
 " Languages and Syntax highlighting
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'ck3g/vim-change-hash-syntax'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rbenv'
-Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'ekalinin/Dockerfile.vim'
