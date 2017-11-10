@@ -38,7 +38,7 @@ alias lsg='ll | grep'
 
 # Alias Editing
 TRAPHUP() {
-  source $dotfiles/zsh/aliases.zsh
+  source $dotfiles/roles/zsh/files/custom/aliases.zsh
 }
 
 alias ae='nvim $dotfiles/roles/zsh/files/custom/aliases.zsh' # alias edit
