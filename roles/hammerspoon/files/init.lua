@@ -483,7 +483,6 @@ function hs.window.twoThirdsRight(win)
   })
 end
 
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -525,7 +524,7 @@ end
 function hs.window.threeQuartersLeft(win)
   local screen = win:screen()
   local maxFrame = screen:frame()
-  maxFrame.w = maxFrame.w/3*2
+  maxFrame.w = maxFrame.w/4*3
   maxFrame.h = maxFrame.h
   win:setFrame(maxFrame)
 end
@@ -540,9 +539,26 @@ function hs.window.threeQuartersRight(win)
   local screen = win:screen()
   local maxFrame = screen:frame()
   win:setFrame({
-    x = maxFrame.x + maxFrame.w/3,
+    x = maxFrame.x + maxFrame.w/4,
     y = maxFrame.y,
-    w = maxFrame.w/3*2,
+    w = maxFrame.w/4*3,
+    h = maxFrame.h
+  })
+end
+
+--           2/4
+-- +---+---------+---+
+-- |   |         |   |
+-- |   |  HERE   |   |
+-- |   |         |   |
+-- +---+---------+---+
+function hs.window.twoMiddleQuarters(win)
+  local screen = win:screen()
+  local maxFrame = screen:frame()
+  win:setFrame({
+    x = maxFrame.x + maxFrame.w/4,
+    y = maxFrame.y,
+    w = maxFrame.w/2,
     h = maxFrame.h
   })
 end
@@ -612,6 +628,26 @@ hs.hotkey.bind(super, "ř", function() -- Super+5
   hs.window.focusedWindow():twoThirdsRight()
 end)
 
+hs.hotkey.bind(super, "ž", function() -- Super+6
+  hs.window.focusedWindow():leftQuarter()
+end)
+
+hs.hotkey.bind(super, "ý", function() -- Super+7
+  hs.window.focusedWindow():rightQuarter()
+end)
+
+hs.hotkey.bind(super, "á", function() -- Super+8
+  hs.window.focusedWindow():threeQuartersLeft()
+end)
+
+hs.hotkey.bind(super, "í", function() -- Super+9
+  hs.window.focusedWindow():threeQuartersRight()
+end)
+
+hs.hotkey.bind(super, "é", function() -- Super+0
+  hs.window.focusedWindow():twoMiddleQuarters()
+end)
+
 hs.hotkey.bind(super, ",", function() -- Super+?
   local win = hs.window.focusedWindow()
   local frame = win:frame()
@@ -620,7 +656,7 @@ hs.hotkey.bind(super, ",", function() -- Super+?
   hs.notify.show("Window dimensions", appName, dimensions)
 end)
 
-hs.hotkey.bind(super, "C", function() -- Super+C
+hs.hotkey.bind(super, "C", function()
   hs.window.focusedWindow():fullscreenHeight()
 end)
 -- }}}
