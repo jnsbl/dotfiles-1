@@ -212,6 +212,10 @@ alias bug='brew upgrade'
 alias bcl='brew cleanup'
 alias bugl='bug && bcl'
 alias bci='brew cask install'
+alias bco='brew cask outdated'
+alias bcug='brew cask upgrade'
+alias bccl='brew cask cleanup'
+alias bcugl='bcug && bccl'
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
 
 alias b2d='boot2docker'
@@ -245,3 +249,13 @@ alias mux='tmuxinator'
 
 # DNS resolving
 alias dns='dscacheutil -q host -a name'
+
+alias rgr='ranger'
+
+alias bex='bundle exec'
+
+alias sc='e ~/.ssh/config'
+
+alias vtop='vtop --theme monokai'
+
+alias py='python'
