@@ -214,14 +214,6 @@ alias bugl='bug && bcl'
 alias bci='brew cask install'
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
 
-# issuues
-alias visa='nvim ~/.issuues/accept.json'
-alias ia='issuues accept'
-
-# UU
-alias vuuconf='nvim ~/.uu/config/uu-client.properties'
-alias vuesconf='nvim ~/.ues/config/ues-client.properties'
-
 alias b2d='boot2docker'
 
 alias ysg='yard server --gems'
