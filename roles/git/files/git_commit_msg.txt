@@ -1,5 +1,21 @@
-# If applied, this commit will...
 
-# Explain why this change is being made
-
-# Provide links to any relevant tickets, articles or other resources
+# <title>
+#
+# <body>
+#
+# <footer>
+#
+# *** TITLE ***
+# 50-character title line
+# Hint: If applied, this commit will <your title line here>
+#
+# *** BODY ***
+# 72-character wrapped longer description. This should answer:
+#
+# * Why was this change necessary?
+# * How does it address the problem?
+# * Are there any side effects?
+#
+# *** FOOTER ***
+# Resolves ues:TER:REQUEST
+# References ues:TER:ART1, ues:TER:ART2, and ues:TER:ART3
