@@ -1,0 +1,18 @@
+DEFAULT_USER="$USER"
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_TIME_FORMAT='%D{\uf017 %H:%M}'
+POWERLEVEL9K_STATUS_VERBOSE=false
+
+# fish-like path truncation - e.g. /usr/share/vim -> /u/s/vim
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs time vi_mode)
