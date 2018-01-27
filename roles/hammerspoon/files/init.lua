@@ -39,7 +39,7 @@ singleApps = {
   {'c', 'Google Chrome'},
   {'d', 'Dash'},
   {'e', 'SourceTree'},
-  {'f', 'Path Finder'},
+  {'f', 'ForkLift'},
   {'g', 'TogglDesktop'},
   {'i', 'Insomnia'},
   {'k', 'Slack'},
