@@ -1,16 +1,9 @@
 " -----------------------------------------------------------------------------
 " Plugin Settings - Colorscheme
 
-" XXX Don't know why but base16 dark colorschemes don't work with Neovim.app
-if exists("neovim_dot_app")
-  set background=dark
-  let g:gruvbox_contrast_dark="hard"
-  colorscheme gruvbox
-else
-  set background=dark
-  let base16colorspace=256
-  colorscheme nova
-endif
+set background=dark
+let base16colorspace=256
+colorscheme base16-flat
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - Airline
