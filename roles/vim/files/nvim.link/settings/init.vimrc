@@ -71,6 +71,8 @@ Plug 'junegunn/gv.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'tonekk/vim-binding-pry'
 Plug 'benmills/vimux'
+Plug 'tpope/vim-liquid'
+Plug 'fatih/vim-go'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
