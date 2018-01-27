@@ -223,6 +223,11 @@ nnoremap <silent> <Leader>zf :GFiles<cr>
 nnoremap <silent> <Leader>zb :Buffers<cr>
 nnoremap <silent> <Leader>zt :BTags<cr>
 
+nnoremap <silent> <Leader>g :GFiles<cr>
+nnoremap <silent> <Leader>f :Files<cr>
+nnoremap <silent> <Leader>b :Buffers<cr>
+nnoremap <silent> <Leader>t :BTags<cr>
+
 " -----------------------------------------------------------------------------
 " Plugin Settings - ArgWrap
 
