@@ -703,4 +703,17 @@ wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
 wifiWatcher:start()
 -- }}}
 
+--------------------------------------------------------------------------------
+-- Spoons (plug-ins) {{{
+--------------------------------------------------------------------------------
+
+spoon_list = {
+  "FnMate"
+}
+
+for _, v in pairs (spoon_list) do
+  hs.loadSpoon(v)
+end
+-- }}}
+
 -- vim:foldmethod=marker:foldenable
