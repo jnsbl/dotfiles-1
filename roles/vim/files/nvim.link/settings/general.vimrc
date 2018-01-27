@@ -33,8 +33,10 @@ autocmd BufRead,BufNewFile *.bork set filetype=sh
 autocmd BufRead,BufNewFile *.rake set filetype=ruby
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
 
-if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+if has('persistent_undo')
+  if !isdirectory(expand('~').'/.vim/backups')
+    silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  endif
   set undodir=~/.vim/backups
   set undofile
 endif
