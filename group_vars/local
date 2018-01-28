@@ -49,7 +49,6 @@ osx_homebrew_packages:
   - p7zip
   - sphinx-doc # for python
   - python
-  - pyenv
   - reattach-to-user-namespace
   - sane-backends # for wine
   - the_silver_searcher
