@@ -46,7 +46,7 @@ let g:startify_bookmarks = [
   \ {'t': '~/.tmux.conf'},
   \ {'r': '~/.config/karabiner/karabiner.json'},
   \ {'w': '~/code/work/git/uu_cloudg01_c3-server-ruby/create_asids_awids.rb'},
-  \ {'d': '~/Dropbox/todo.txt'},
+  \ {'d': '~/.cdg_paths'},
   \ ]
 
 " -----------------------------------------------------------------------------

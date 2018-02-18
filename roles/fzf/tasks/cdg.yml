@@ -1,0 +1,17 @@
+- name: Symlink cdscuts_list_echo
+  file:
+    src: "{{ dotfiles_home }}/roles/fzf/files/cdscuts_list_echo"
+    dest: "/usr/local/bin/cdscuts_list_echo"
+    state: link
+
+- name: Symlink cdscuts_glob_echo
+  file:
+    src: "{{ dotfiles_home }}/roles/fzf/files/cdscuts_glob_echo"
+    dest: "/usr/local/bin/cdscuts_glob_echo"
+    state: link
+
+- name: Symlink cdg.zsh
+  file:
+    src: "{{ dotfiles_home }}/roles/fzf/files/cdg.zsh"
+    dest: "{{dotfiles_user_home}}/.zsh.after/cdg.zsh"
+    state: link

@@ -8,3 +8,5 @@
     src: "{{ dotfiles_home }}/roles/fzf/files/fzf.zsh"
     dest: "{{dotfiles_user_home}}/.zsh.after/fzf.zsh"
     state: link
+
+- include: cdg.yml
