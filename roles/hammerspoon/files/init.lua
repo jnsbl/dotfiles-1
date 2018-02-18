@@ -85,6 +85,7 @@ singleApps = {
   {'n', 'nvALT'},
   {'o', 'Todoist'},
   {'p', 'Spotify'},
+  {'q', 'quteBrowser'},
   {'s', 'Safari'},
   {'t', 'iTerm'},
   {'u', 'iTunes'},
@@ -92,6 +93,7 @@ singleApps = {
   {'w', 'Visual Studio Code'},
   {'x', 'Firefox'},
   {'y', 'Skype'},
+  {'z', 'Spark'},
 }
 
 for i, app in ipairs(singleApps) do
