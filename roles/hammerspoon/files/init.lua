@@ -2,11 +2,48 @@ local hyper = {"cmd", "ctrl", "alt", "shift"}
 local super = {"cmd", "ctrl", "alt"}
 
 --------------------------------------------------------------------------------
+-- Caffeine {{{
+--------------------------------------------------------------------------------
+
+caffeine = hs.menubar.new()
+function setCaffeineDisplay(state)
+    if state then
+        caffeine:setTitle("AWAKE")
+    else
+        caffeine:setTitle("SLEEPY")
+    end
+end
+
+function caffeineClicked()
+    setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
+end
+
+if caffeine then
+    caffeine:setClickCallback(caffeineClicked)
+    setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
+end
+
+hs.hotkey.bind(super, "-", function()
+  caffeineClicked()
+  if hs.caffeinate.get("displayIdle") then
+    hs.notify.show("Caffeine", "", "AWAKE")
+  else
+    hs.notify.show("Caffeine", "", "SLEEPY")
+  end
+end)
+
+-- TODO Automatically enable caffeine when Skype starts and disable it when Skype quits
+-- }}}
+
+--------------------------------------------------------------------------------
 -- Hammerspoon stuff {{{
 --------------------------------------------------------------------------------
 
 -- Reload configuration
 hs.hotkey.bind(super, "R", function()
+  if caffeine then
+    caffeine.delete()
+  end
   hs.reload()
 end)
 hs.notify.show("Hammerspoon", "", "Config loaded")
