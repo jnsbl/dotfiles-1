@@ -19,6 +19,8 @@ endif
 " -----------------------------------------------------------------------------
 " Options - Behaviour
 
+let python_highlight_all=1
+
 syntax on
 filetype on
 filetype indent on

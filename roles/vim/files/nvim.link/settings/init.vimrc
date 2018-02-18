@@ -65,6 +65,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-liquid'
 Plug 'fatih/vim-go'
+Plug 'vim-scripts/indentpython.vim'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
@@ -86,6 +87,7 @@ end
 Plug 'Shougo/neco-vim'
 if has('python3') || has('python')
   Plug 'SirVer/ultisnips'
+  Plug 'zchee/deoplete-jedi'
 end
 Plug 'honza/vim-snippets'
 call plug#end()
