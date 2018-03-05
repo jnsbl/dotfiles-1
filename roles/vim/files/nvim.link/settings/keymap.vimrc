@@ -40,6 +40,9 @@ nmap <silent> ,vr :so %<CR>
 " ,qo to open it back up (rare)
 nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
+" Jump to next error with Ctrl-n and previous error with Ctrl-m
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
 
 "Move back and forth through previous and next buffers
 "with ,y and ,x (I'm using qwertz keyboard)

@@ -29,8 +29,12 @@ filetype plugin on
 set hidden
 set autoread
 set nowrap
-autocmd FileType markdown setlocal wrap
+set autowrite
 
+" Enter automatically into the files directory
+autocmd BufEnter * silent! lcd %:p:h
+
+autocmd FileType markdown setlocal wrap
 autocmd BufRead,BufNewFile *.bork set filetype=sh
 autocmd BufRead,BufNewFile *.rake set filetype=ruby
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
