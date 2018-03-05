@@ -42,7 +42,7 @@ end)
 -- Reload configuration
 hs.hotkey.bind(super, "R", function()
   if caffeine then
-    caffeine.delete()
+    caffeine:delete()
   end
   hs.reload()
 end)
