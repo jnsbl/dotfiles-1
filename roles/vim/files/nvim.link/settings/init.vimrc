@@ -31,6 +31,7 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'moll/vim-bbye'
+Plug 'ipod825/vim-netranger'
 
 " Search
 Plug 'rking/ag.vim'
