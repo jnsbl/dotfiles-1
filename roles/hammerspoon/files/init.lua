@@ -605,81 +605,81 @@ end
 -- Window sizing {{{
 --------------------------------------------------------------------------------
 
-hs.hotkey.bind(super, "Left", function()
-  hs.window.focusedWindow():left()
-end)
-
-hs.hotkey.bind(super, "Right", function()
-  hs.window.focusedWindow():right()
-end)
-
-hs.hotkey.bind(super, "Up", function()
-  hs.window.focusedWindow():up()
-end)
-
-hs.hotkey.bind(super, "Down", function()
-  hs.window.focusedWindow():down()
-end)
-
-hs.hotkey.bind(super, "Return", function()
-  hs.window.focusedWindow():maximize()
-end)
-
-hs.hotkey.bind(super, "Z", function()
-  hs.window.focusedWindow():upLeft()
-end)
-
-hs.hotkey.bind(super, "U", function()
-  hs.window.focusedWindow():upRight()
-end)
-
-hs.hotkey.bind(super, "N", function()
-  hs.window.focusedWindow():downRight()
-end)
-
-hs.hotkey.bind(super, "B", function()
-  hs.window.focusedWindow():downLeft()
-end)
-
-hs.hotkey.bind(super, "H", function()
-  hs.window.focusedWindow():center()
-end)
-
-hs.hotkey.bind(super, "+", function()
-  hs.window.focusedWindow():leftThird() -- Super+1
-end)
-
-hs.hotkey.bind(super, "ě", function() -- Super+2
-  hs.window.focusedWindow():middleThird()
-end)
-
-hs.hotkey.bind(super, "š", function() -- Super+3
-  hs.window.focusedWindow():rightThird()
-end)
-
-hs.hotkey.bind(super, "č", function() -- Super+4
-  hs.window.focusedWindow():twoThirdsLeft()
-end)
-
-hs.hotkey.bind(super, "ř", function() -- Super+5
-  hs.window.focusedWindow():twoThirdsRight()
-end)
-
-hs.hotkey.bind(super, "ž", function() -- Super+6
-  hs.window.focusedWindow():leftQuarter()
-end)
-
-hs.hotkey.bind(super, "ý", function() -- Super+7
-  hs.window.focusedWindow():rightQuarter()
-end)
-
-hs.hotkey.bind(super, "á", function() -- Super+8
-  hs.window.focusedWindow():threeQuartersLeft()
-end)
-
-hs.hotkey.bind(super, "í", function() -- Super+9
-  hs.window.focusedWindow():threeQuartersRight()
-end)
+-- hs.hotkey.bind(super, "Left", function()
+--   hs.window.focusedWindow():left()
+-- end)
+--
+-- hs.hotkey.bind(super, "Right", function()
+--   hs.window.focusedWindow():right()
+-- end)
+--
+-- hs.hotkey.bind(super, "Up", function()
+--   hs.window.focusedWindow():up()
+-- end)
+--
+-- hs.hotkey.bind(super, "Down", function()
+--   hs.window.focusedWindow():down()
+-- end)
+--
+-- hs.hotkey.bind(super, "Return", function()
+--   hs.window.focusedWindow():maximize()
+-- end)
+--
+-- hs.hotkey.bind(super, "Z", function()
+--   hs.window.focusedWindow():upLeft()
+-- end)
+--
+-- hs.hotkey.bind(super, "U", function()
+--   hs.window.focusedWindow():upRight()
+-- end)
+--
+-- hs.hotkey.bind(super, "N", function()
+--   hs.window.focusedWindow():downRight()
+-- end)
+--
+-- hs.hotkey.bind(super, "B", function()
+--   hs.window.focusedWindow():downLeft()
+-- end)
+--
+-- hs.hotkey.bind(super, "H", function()
+--   hs.window.focusedWindow():center()
+-- end)
+--
+-- hs.hotkey.bind(super, "+", function()
+--   hs.window.focusedWindow():leftThird() -- Super+1
+-- end)
+--
+-- hs.hotkey.bind(super, "ě", function() -- Super+2
+--   hs.window.focusedWindow():middleThird()
+-- end)
+--
+-- hs.hotkey.bind(super, "š", function() -- Super+3
+--   hs.window.focusedWindow():rightThird()
+-- end)
+--
+-- hs.hotkey.bind(super, "č", function() -- Super+4
+--   hs.window.focusedWindow():twoThirdsLeft()
+-- end)
+--
+-- hs.hotkey.bind(super, "ř", function() -- Super+5
+--   hs.window.focusedWindow():twoThirdsRight()
+-- end)
+--
+-- hs.hotkey.bind(super, "ž", function() -- Super+6
+--   hs.window.focusedWindow():leftQuarter()
+-- end)
+--
+-- hs.hotkey.bind(super, "ý", function() -- Super+7
+--   hs.window.focusedWindow():rightQuarter()
+-- end)
+--
+-- hs.hotkey.bind(super, "á", function() -- Super+8
+--   hs.window.focusedWindow():threeQuartersLeft()
+-- end)
+--
+-- hs.hotkey.bind(super, "í", function() -- Super+9
+--   hs.window.focusedWindow():threeQuartersRight()
+-- end)
 
 hs.hotkey.bind(super, "é", function() -- Super+0
   hs.window.focusedWindow():twoMiddleQuarters()
@@ -745,12 +745,22 @@ wifiWatcher:start()
 --------------------------------------------------------------------------------
 
 spoon_list = {
-  "FnMate"
+  "FnMate",
+  "MiroWindowsManager"
 }
 
 for _, v in pairs (spoon_list) do
   hs.loadSpoon(v)
 end
+
+hs.window.animationDuration = 0
+spoon.MiroWindowsManager:bindHotkeys({
+  up = {super, "up"},
+  right = {super, "right"},
+  down = {super, "down"},
+  left = {super, "left"},
+  fullscreen = {super, "return"}
+})
 -- }}}
 
 -- vim:foldmethod=marker:foldenable
