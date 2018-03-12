@@ -9,5 +9,4 @@ osx_homebrew_packages:
 osx_cask_packages:
   - firefox
   - google-chrome
-  - bettertouchtool
   - iterm2
