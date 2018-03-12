@@ -1,0 +1,5 @@
+- name: Symlink golang.zsh
+  file:
+    src: "{{ dotfiles_home }}/roles/golang/files/golang.zsh"
+    dest: "{{dotfiles_user_home}}/.zsh.after/golang.zsh"
+    state: link
