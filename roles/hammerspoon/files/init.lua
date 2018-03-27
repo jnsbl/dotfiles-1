@@ -26,9 +26,9 @@ end
 hs.hotkey.bind(super, "-", function()
   caffeineClicked()
   if hs.caffeinate.get("displayIdle") then
-    hs.notify.show("Caffeine", "", "AWAKE")
+    hs.notify.show("Caffeine", "AWAKE", "Your Mac will not sleep")
   else
-    hs.notify.show("Caffeine", "", "SLEEPY")
+    hs.notify.show("Caffeine", "SLEEPY", "Your Mac will sleep on its normal schedule")
   end
 end)
 
