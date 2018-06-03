@@ -1,0 +1,11 @@
+---
+- name: Install bash
+  homebrew:
+    name: bash
+    state: latest
+
+- name: Symlink bashrc
+  file:
+    src: "{{ dotfiles_home }}/roles/bash/files/bashrc"
+    dest: "{{ dotfiles_user_home }}/.bashrc"
+    state: link
