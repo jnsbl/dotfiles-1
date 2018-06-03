@@ -64,6 +64,7 @@ There are two main commands in the `bin` directory for setting up and updating d
 
 - `dot-bootstrap`: sets up local environment by executing all roles in `local_env.yml`.
 - `dot`: updates local environment by executing all roles in `local_env.yml` except for the ones tagged with `bootstrap`.
+- `dot-tag`: updates local environment by executing all roles in `local_env.yml` tagged with the specified tag.
 
 ## Special files
 
