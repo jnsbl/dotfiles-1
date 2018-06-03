@@ -11,6 +11,7 @@
     - vim
     - {role: kota65535.rbenv, tags: ['bootstrap']}
     - ruby
+    - rubymine
     - golang
     - uu
 #    - python
