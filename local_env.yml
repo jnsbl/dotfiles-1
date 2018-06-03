@@ -10,7 +10,7 @@
     - {role: zsh, tags: ['bootstrap']}
     - {role: fish, tags: ['bootstrap', 'fish']}
     - vim
-    - {role: kota65535.rbenv, tags: ['bootstrap']}
+    - {role: kota65535.rbenv, tags: ['bootstrap', 'rbenv']}
     - ruby
     - rubymine
     - golang
