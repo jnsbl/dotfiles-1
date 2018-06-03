@@ -7,7 +7,7 @@ dotfiles_user_home: "{{ '~' | expanduser }}"
 # Where your dotfiles live. Probably don't need to change this.
 dotfiles_home: "{{dotfiles_user_home}}/dotfiles"
 
-default_shell: zsh
+default_shell: fish
 
 # Name used in commit messages
 full_name: Jan Sibil
@@ -31,6 +31,7 @@ osx_homebrew_packages:
   - ctags
   - fasd
   - go # for fzf
+  - fish
   - fzf
   - gibo
   - git
@@ -154,3 +155,12 @@ rbenv_plugins:
 rbenv_profile_path: "{{ dotfiles_user_home }}/.zsh.after/rbenv.zsh"
 default_gems_file: roles/ruby/files/default-gems
 gemrc_file: roles/ruby/files/gemrc
+
+# Friendly interactive shell
+fisherman_plugins:
+  - barnybug/docker-fish-completion
+  - fzf
+  - matchai/spacefish
+  - omf/fasd
+  - pyenv
+  - rbenv

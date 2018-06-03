@@ -1,0 +1,1 @@
+alias bu='brew update'

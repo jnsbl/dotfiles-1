@@ -1,0 +1,1 @@
+alias bo='brew outdated'

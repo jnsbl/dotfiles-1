@@ -1,0 +1,1 @@
+alias bug='brew upgrade'

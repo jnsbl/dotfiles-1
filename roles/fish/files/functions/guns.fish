@@ -1,0 +1,1 @@
+alias guns='git unstage'

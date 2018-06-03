@@ -1,0 +1,1 @@
+alias gci='git ci'

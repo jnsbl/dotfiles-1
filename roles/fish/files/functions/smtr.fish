@@ -1,0 +1,1 @@
+alias smtr='sudo mtr'

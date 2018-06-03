@@ -1,0 +1,1 @@
+alias bex='bundle exec'

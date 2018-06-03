@@ -1,0 +1,8 @@
+---
+fisherman_plugins:
+  - barnybug/docker-fish-completion
+  - fzf
+  - matchai/spacefish
+  - omf/fasd
+  - pyenv
+  - rbenv

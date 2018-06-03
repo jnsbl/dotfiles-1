@@ -1,5 +1,10 @@
 set nocompatible
 
+" https://github.com/dag/vim-fish#teach-a-vim-to-fish
+if &shell =~# 'fish$'
+  set shell=bash
+endif
+
 " Automatically install vim-plug and run PlugInstall if vim-plug not found
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -67,6 +72,7 @@ Plug 'benmills/vimux'
 Plug 'tpope/vim-liquid'
 Plug 'fatih/vim-go'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'dag/vim-fish'
 
 " Text objects
 Plug 'kana/vim-textobj-user'

@@ -1,0 +1,9 @@
+---
+- name: Install Fisherman
+  command: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+  args:
+    creates: "{{ dotfiles_user_home }}/.config/fish/functions/fisher.fish"
+
+- name: Install Fisherman plugins
+  command: fisher {{ item }}
+  with_items: '{{ fisherman_plugins }}'

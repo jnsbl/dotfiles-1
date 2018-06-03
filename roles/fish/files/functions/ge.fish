@@ -1,0 +1,1 @@
+alias ge='gem edit'

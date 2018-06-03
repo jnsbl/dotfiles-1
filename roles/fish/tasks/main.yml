@@ -1,0 +1,50 @@
+---
+- name: Make sure fish is installed
+  homebrew:
+    name: fish
+    state: latest
+
+- name: Ensure fish is in /etc/shells
+  lineinfile:
+    path: /etc/shells
+    line: '/usr/local/bin/fish'
+    state: present
+  register: fish_shells
+  become_method: sudo
+  become: true
+
+- name: Change default shell to fish
+  command: chsh -s /usr/local/bin/fish
+  when: fish_shells.changed and default_shell == "fish"
+
+- name: Symlink main fish config file
+  file:
+    src: "{{ dotfiles_home }}/roles/fish/files/config.fish"
+    dest: "{{ dotfiles_user_home }}/.config/fish/config.fish"
+    state: link
+
+- name: Find custom fish config files
+  find:
+    paths: "{{ dotfiles_home }}/roles/fish/files/conf.d"
+    file_type: "any"
+  register: fish_conf_d
+
+- name: Symlink custom fish config files
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ dotfiles_user_home }}/.config/fish/conf.d/{{ item.path | basename }}"
+    state: link
+  with_items: "{{ fish_conf_d.files }}"
+
+- name: Find custom fish functions
+  find:
+    paths: "{{ dotfiles_home }}/roles/fish/files/functions"
+    file_type: "any"
+  register: fish_functions
+
+- name: Symlink custom fish functions
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ dotfiles_user_home }}/.config/fish/functions/{{ item.path | basename }}"
+    state: link
+  with_items: "{{ fish_functions.files }}"

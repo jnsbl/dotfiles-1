@@ -8,6 +8,7 @@
     - git
     - {role: package_manager, tags: ['bootstrap']}
     - {role: zsh, tags: ['bootstrap']}
+    - {role: fish, tags: ['bootstrap', 'fish']}
     - vim
     - {role: kota65535.rbenv, tags: ['bootstrap']}
     - ruby

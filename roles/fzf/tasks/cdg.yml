@@ -15,3 +15,9 @@
     src: "{{ dotfiles_home }}/roles/fzf/files/cdg.zsh"
     dest: "{{dotfiles_user_home}}/.zsh.after/cdg.zsh"
     state: link
+
+- name: Symlink cdg.fish
+  file:
+    src: "{{ dotfiles_home }}/roles/fzf/files/cdg.fish"
+    dest: "{{dotfiles_user_home}}/.config/fish/functions/cdg.fish"
+    state: link
