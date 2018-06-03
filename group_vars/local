@@ -83,7 +83,6 @@ osx_cask_packages:
   - itsycal
   - karabiner-elements
   # - libreoffice # TODO Install a particular version (supported by +4U LibreOffice extensions)
-  - movist
   - nvalt
   - path-finder
   - postman
@@ -132,6 +131,7 @@ mas_installed_apps:
   - { id: 924891282,  name: "Pixave" }
   - { id: 1176895641, name: "Spark" }
   - { id: 585829637,  name: "Todoist" }
+  - { id: 461788075,  name: "Movist" }
 
 # Node utilities
 npm_global_packages:
