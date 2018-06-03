@@ -25,7 +25,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
-Plug 'vim-scripts/AutoTag'
+Plug 'vim-scripts/AutoTag', has('python3') ? {} : { 'on': [] }
 Plug 'Townk/vim-autoclose'
 Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-tmux-navigator'
