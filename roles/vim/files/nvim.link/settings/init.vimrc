@@ -43,6 +43,7 @@ Plug 'rizzatti/dash.vim'
 
 " Appearance
 Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'xsunsmile/showmarks'
 " Required for Gblame in terminal vim
 Plug 'godlygeek/csapprox'
