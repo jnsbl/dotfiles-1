@@ -5,25 +5,23 @@
 - name: Set up local development environment
   hosts: local
   roles:
-    - git
+    - {role: git, tags: ['git']}
     - {role: package_manager, tags: ['bootstrap']}
-    - {role: zsh, tags: ['bootstrap']}
     - {role: bash, tags: ['bootstrap', 'bash']}
+    - {role: zsh, tags: ['bootstrap', 'zsh']}
     - {role: fish, tags: ['bootstrap', 'fish']}
-    - vim
+    - {role: vim, tags: ['vim']}
     - {role: kota65535.rbenv, tags: ['bootstrap', 'rbenv']}
-    - ruby
-    - rubymine
-    - golang
-    - uu
-#    - python
-#    - npm
-#    - hub
-#    - autoenv
-    - ag
-    - fzf
-    - tmux
-#    - git-flow
+    - {role: ruby, tags: ['ruby']}
+    - {role: rubymine, tags: ['rubymine']}
+    - {role: golang, tags: ['golang']}
+    - {role: uu, tags: ['uu']}
+#    - {role: python, tags: ['python']}
+#    - {role: npm, tags: ['npm']}
+    - {role: ag, tags: ['ag']}
+    - {role: fzf, tags: ['fzf']}
+    - {role: tmux, tags: ['tmux']}
+#    - {role: git-flow, tags: ['git-flow']}
     - {role: karabiner, when: ansible_os_family == "Darwin"}
     - {role: hammerspoon, when: ansible_os_family == "Darwin"}
     - {role: chunkwm, when: ansible_os_family == "Darwin", tags: ['bootstrap', 'chunkwm']}
