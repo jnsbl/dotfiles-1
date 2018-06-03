@@ -7,6 +7,12 @@
 - include: osx.yml
   when: ansible_os_family == "Darwin"
 
+- name: Ensure zsh is in /etc/shells
+  lineinfile:
+    path: /etc/shells
+    line: '/usr/local/bin/zsh'
+    state: present
+
 # Configuration
 - name: Check if zshrc already exists
   stat: path="{{dotfiles_user_home}}/.zshrc"

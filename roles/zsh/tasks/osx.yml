@@ -15,8 +15,8 @@
 
 - name: Change default shell to zsh
   command: chsh -s /usr/local/bin/zsh
-  # Only run this if above task was changed
-  when: zsh_shells.changed
+  # Only run this if above task was changed and zsh shall be the default shell
+  when: zsh_shells.changed and default_shell == "zsh"
 
 # Fix broken /etc/zshenv, which runs path_helper
 # We rename it to prevent unwanted reordering of $PATH
