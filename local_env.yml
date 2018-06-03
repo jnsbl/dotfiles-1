@@ -25,6 +25,7 @@
 #    - git-flow
     - {role: karabiner, when: ansible_os_family == "Darwin"}
     - {role: hammerspoon, when: ansible_os_family == "Darwin"}
+    - {role: chunkwm, when: ansible_os_family == "Darwin", tags: ['bootstrap', 'chunkwm']}
     - {role: sublime, when: ansible_os_family == "Darwin"}
     - {role: osx, when: ansible_os_family == "Darwin", tags: ['bootstrap']}
     - {role: wine, when: ansible_os_family == "Darwin", tags: ['bootstrap']}

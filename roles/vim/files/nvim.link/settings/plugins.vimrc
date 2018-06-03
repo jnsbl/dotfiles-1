@@ -43,6 +43,8 @@ let g:startify_bookmarks = [
   \ {'y': '~/.pry_history'},
   \ {'h': '~/.hammerspoon/init.lua'},
   \ {'t': '~/.tmux.conf'},
+  \ {'s': '~/.skhdrc'},
+  \ {'w': '~/.chunkwmrc'},
   \ {'d': '~/.cdg_paths'},
   \ ]
 

@@ -1,0 +1,33 @@
+---
+- name: Tap into crisidev/chunkwm
+  homebrew_tap:
+    tap: crisidev/chunkwm
+    state: present
+
+- name: Install chunkwm
+  homebrew:
+    name: chunkwm
+    state: head
+
+- name: Symlink chunkwmrc
+  file:
+    src: "{{ dotfiles_home }}/roles/chunkwm/files/chunkwmrc"
+    dest: "{{dotfiles_user_home}}/.chunkwmrc"
+    state: link
+
+- name: Start chunkwm as service
+  command: /usr/local/bin/brew services restart chunkwm
+
+- name: Install skhd
+  homebrew:
+    name: koekeishiya/formulae/skhd
+    state: head
+
+- name: Symlink skhdrc
+  file:
+    src: "{{ dotfiles_home }}/roles/chunkwm/files/skhdrc"
+    dest: "{{dotfiles_user_home}}/.skhdrc"
+    state: link
+
+- name: Start skhd as service
+  command: /usr/local/bin/brew services restart skhd

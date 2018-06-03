@@ -9,6 +9,7 @@ jnsbl's dotfiles, rewritten as Ansible roles. Fully supports macOS. Red Hat and 
 - nice fonts for the terminal and coding.
 - iterm2 profile (w/ hotkey, themes, etc.)
 - neovim with [vim-plug](https://github.com/junegunn/vim-plug) for plugin management.
+- [chunkwm](https://github.com/koekeishiya/chunkwm) tiling window manager controlled by [skhd](https://github.com/koekeishiya/skhd).
 - pluggable. Everything is optional. Fork this. Remove what you don't use. Configure what you do use.
 - Mac packages installed with [homebrew][]. Mac apps installed with [homebrew-cask][].
 
