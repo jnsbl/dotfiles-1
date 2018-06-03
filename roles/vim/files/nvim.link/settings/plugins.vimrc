@@ -40,12 +40,9 @@ let g:startify_bookmarks = [
   \ {'v': '~/.config/nvim/settings/init.vimrc'},
   \ {'g': '~/.config/nvim/settings/general.vimrc'},
   \ {'p': '~/.config/nvim/settings/plugins.vimrc'},
-  \ {'u': '~/.uu/config/uu-client.properties'},
   \ {'y': '~/.pry_history'},
   \ {'h': '~/.hammerspoon/init.lua'},
   \ {'t': '~/.tmux.conf'},
-  \ {'r': '~/.config/karabiner/karabiner.json'},
-  \ {'w': '~/code/work/git/uu_cloudg01_c3-server-ruby/create_asids_awids.rb'},
   \ {'d': '~/.cdg_paths'},
   \ ]
 
