@@ -73,6 +73,7 @@ Plug 'tpope/vim-liquid'
 Plug 'fatih/vim-go'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dag/vim-fish'
+Plug 'kchmck/vim-coffee-script'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
