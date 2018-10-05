@@ -1,7 +1,7 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/Dracula.tmTheme",
-	"font_face": "FuraCode Nerd Font",
-	"font_size": 13,
+	"color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Oceanic_Next.tmTheme",
+	"font_face": "FantasqueSansMono Nerd Font",
+	"font_size": 16,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -12,6 +12,7 @@
 		100
 	],
 	"tab_size": 2,
+	"theme": "Default.sublime-theme",
 	"trailing_spaces_trim_on_save": true,
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true
