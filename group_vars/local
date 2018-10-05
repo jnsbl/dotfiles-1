@@ -33,6 +33,7 @@ osx_homebrew_packages:
   - go # for fzf
   - fish
   - fzf
+  - gawk
   - gibo
   - git
   - git-flow
