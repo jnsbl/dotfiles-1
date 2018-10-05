@@ -1,1 +1,1 @@
-alias bo='brew outdated'
+alias bo='echo -e "\n**********\nOutdated:\n"; and brew outdated'

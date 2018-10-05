@@ -1,1 +1,1 @@
-alias bco='brew cask outdated'
+alias bco='echo -e "\n**********\nOutdated:\n"; and brew cask outdated'
