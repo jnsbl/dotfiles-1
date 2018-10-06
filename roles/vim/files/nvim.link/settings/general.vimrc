@@ -38,6 +38,7 @@ autocmd FileType markdown setlocal wrap
 autocmd BufRead,BufNewFile *.bork set filetype=sh
 autocmd BufRead,BufNewFile *.rake set filetype=ruby
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
+autocmd BufRead,BufNewFile *.conf set filetype=apache
 
 if has('persistent_undo')
   if !isdirectory(expand('~').'/.vim/backups')
@@ -85,3 +86,10 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" -----------------------------------------------------------------------------
+" Options - Completion
+
+" settings recommended by vim-mucomplete
+set completeopt+=menuone
+set completeopt+=noselect
+set shortmess+=c    " Shut off completion messages

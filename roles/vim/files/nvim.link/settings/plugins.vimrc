@@ -2,8 +2,10 @@
 " Plugin Settings - Colorscheme
 
 set background=dark
+" set background=light
 let base16colorspace=256
-colorscheme dracula
+colorscheme base16-oceanicnext
+" colorscheme base16-solarized-light
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - Airline
@@ -47,6 +49,7 @@ let g:startify_bookmarks = [
   \ {'w': '~/.chunkwmrc'},
   \ {'d': '~/.cdg_paths'},
   \ ]
+let g:startify_list_order = ['files', 'bookmarks', 'sessions', 'commands']
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - Showmarks
@@ -234,6 +237,7 @@ if $PATH !~ "\.rbenv"
 endif
 
 let test#ruby#minitest#file_pattern = 'test_.*\.rb'
+let test#ruby#minitest#options = '-I lib --verbose'
 let test#ruby#bundle_exec = 1
 
 if exists("g:VimuxTmuxCommand")
@@ -295,3 +299,18 @@ autocmd Filetype go command! -bang A  call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - UltiSnips
+
+" resolve conflict with vim-mucomplete
+let g:UltiSnipsExpandTrigger = "<f5>"        " Do not use <tab>
+let g:UltiSnipsJumpForwardTrigger = "<c-b>"  " Do not use <c-j>
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - vim-mucomplete
+
+" " resolve conflict with vim-endwise
+" imap <Plug>MyCR <Plug>(MUcompleteCR)
+" imap <cr> <Plug>MyCR

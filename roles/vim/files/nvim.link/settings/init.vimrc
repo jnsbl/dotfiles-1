@@ -30,12 +30,15 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/AutoTag', has('python3') ? {} : { 'on': [] }
 Plug 'Townk/vim-autoclose'
 Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'moll/vim-bbye'
+Plug 'sickill/vim-pasta'
+Plug 'AndrewRadev/whitespaste.vim'
 
 " Search
 Plug 'rking/ag.vim'
@@ -54,6 +57,7 @@ Plug 'xsunsmile/showmarks'
 Plug 'godlygeek/csapprox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " Languages and Syntax highlighting
 " Plug 'vim-ruby/vim-ruby'
@@ -74,6 +78,8 @@ Plug 'fatih/vim-go'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dag/vim-fish'
 Plug 'kchmck/vim-coffee-script'
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
@@ -84,14 +90,15 @@ Plug 'wellle/targets.vim'
 Plug 'AndrewRadev/dsf.vim'
 
 " Code completion
-if has('nvim')
-  function! DoRemote(arg)
-    UpdateRemotePlugins
-  endfunction
-  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-else
-  Plug 'Shougo/neocomplete.nvim'
-end
+" if has('nvim')
+"   function! DoRemote(arg)
+"     UpdateRemotePlugins
+"   endfunction
+"   Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" else
+"   Plug 'Shougo/neocomplete.nvim'
+" end
+Plug 'lifepillar/vim-mucomplete'
 Plug 'Shougo/neco-vim'
 if has('python3') || has('python')
   Plug 'SirVer/ultisnips'
