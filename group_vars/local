@@ -69,42 +69,39 @@ osx_cask_packages:
   - alfred
   - appcleaner
   - atext
-  - awareness
   - bartender
-  - cyberduck
+  - bitbar
   - daisydisk
   - dash
   - dropbox
   - evernote
   - filezilla
   - firefox
-  - flux
+  - font-fantasquesansmono-nerd-font
+  - get-lyrical
   - google-chrome
   - handbrake
+  - insomnia
   - iterm2
   - itsycal
   - karabiner-elements
-  # - libreoffice # TODO Install a particular version (supported by +4U LibreOffice extensions)
   - nvalt
-  - path-finder
-  - postman
-  - robomongo
+  - robo-3t
   - skype
   - slack
   - sourcetree
   - spotify
   - spotify-notifications
   - sublime-text
-  - teamviewer
-#  - textwrangler
   - the-unarchiver
   - toggldesktop
+  - ubersicht
   - veracrypt
   - vimr
   - virtualbox
   - viscosity
   - vlc
-#  - xee # this is Xee 3 - commercial and worse than Xee 2
+  - xquartz
   # QuickLook plugins
   - betterzipql
   - provisionql
