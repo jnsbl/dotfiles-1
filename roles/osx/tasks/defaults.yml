@@ -67,8 +67,8 @@
   osx_defaults:
     domain: com.apple.dock
     key: expose-animation-duration
-    type: int
-    value: 0
+    type: float
+    value: 0.1
     state: present
 
 - name: Increase window resize speed for Cocoa applications
