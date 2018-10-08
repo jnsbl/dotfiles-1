@@ -377,6 +377,14 @@
     value: true
     state: present
 
+- name: Don't show recent applications in Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    state: present
+
 - name: Disable iTunes track notifications in the Dock
   osx_defaults:
     domain: com.apple.dock
