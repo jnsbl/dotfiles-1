@@ -5,6 +5,9 @@ let mapleader=","
 
 nnoremap <silent> <space>s :w<CR>
 
+" https://jovicailic.org/2015/05/saving-read-only-files-in-vim-sudo-trick/
+cmap w!! w !sudo tee % >/dev/null
+
 " j and k don't skip over wrapped lines in following FileTypes, unless given a count (helpful since I display relative line numbers in these file types)
 autocmd FileType markdown nnoremap <expr> j v:count ? 'j' : 'gj'
 autocmd FileType markdown nnoremap <expr> k v:count ? 'k' : 'gk'
