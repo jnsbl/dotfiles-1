@@ -292,8 +292,8 @@ autocmd FileType go nmap <leader>gt  <Plug>(go-test)
 autocmd FileType go nmap <Leader>gc  <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <Leader>gl  <Plug>(go-metalinter)
 
-nmap <C-g> :GoDeclsDir<cr>
-imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+" nmap <C-g> :GoDeclsDir<cr>
+" imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 autocmd Filetype go command! -bang A  call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
