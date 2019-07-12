@@ -2,10 +2,24 @@
 " Plugin Settings - Colorscheme
 
 set background=dark
-" set background=light
+set termguicolors
 let base16colorspace=256
-colorscheme base16-oceanicnext
-" colorscheme base16-solarized-light
+colorscheme one
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - vim-one
+
+try
+  " https://github.com/rakr/vim-one#tmux-support
+  " set these only if vim-one is the current color scheme
+  let current_scheme = get(g:, 'colors_name', 'N/A')
+  if current_scheme == 'one'
+    set t_8b=^[[48;2;%lu;%lu;%lum
+    set t_8f=^[[38;2;%lu;%lu;%lum
+  endif
+catch /^Vim:E121/
+    " ignore
+endtry
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - Airline
@@ -13,6 +27,8 @@ colorscheme base16-oceanicnext
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_theme = 'one'
+let g:airline#extensions#tmuxline#enabled = 0
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - Bbye

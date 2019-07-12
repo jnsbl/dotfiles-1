@@ -58,6 +58,7 @@ Plug 'godlygeek/csapprox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'rakr/vim-one'
 
 " Languages and Syntax highlighting
 " Plug 'vim-ruby/vim-ruby'
