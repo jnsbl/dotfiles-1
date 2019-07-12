@@ -105,21 +105,49 @@ vnoremap <Leader>rw y:%s/<C-r>"/
 nnoremap <Leader>cw :%s/\<<C-r><C-w>\>/<C-r><C-w>
 vnoremap <Leader>cw y:%s/<C-r>"/<C-r>"
 
-" via: http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
+" The Preserve function is taken from
+" https://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
+" which has been inspired by
+" http://vimcasts.org/episodes/tidying-whitespace/
+" This is actually an enhanced version from
+" https://pastebin.com/raw/G3bTWxBb
+if !exists('*Preserve')
+  function! Preserve(command) range
+    try
+      let l:win_view = winsaveview()
+      silent! keepjumps keeppatterns execute a:command
+    finally
+      call winrestview(l:win_view)
+    endtry
+  endfunction
+endif
+
 " Strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+function! StripTrailingWhitespaces()
+  if !&binary && &filetype != 'diff'
+    call Preserve(':%s/\s\+$//e')
+  endif
 endfunction
-command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
-nmap ,w :StripTrailingWhitespaces<CR>
+
+" Strip trailing whitespace
+" (mnemonic: 'w' for whitespace)
+nmap <Leader>w :call StripTrailingWhitespaces()<CR>
+
+" Remove consecutive blank lines
+function! DelBlankLines() range
+  if !&binary && &filetype != 'diff'
+    call StripTrailingWhitespaces()
+    call Preserve(':%s/^\n\{2,}/\r/ge')
+  endif
+endfunction
+
+" Remove consecutive blank lines
+" (mnemonic: 'J' for join lines)
+nnoremap <Leader>J :call DelBlankLines()<CR>
+
+" Reformat the whole buffer
+" (mnemonic: '=' for indent)
+nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " -----------------------------------------------------------------------------
 " Mappings - Abbreviations
