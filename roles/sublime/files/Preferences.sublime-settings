@@ -1,7 +1,7 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Oceanic_Next.tmTheme",
-	"font_face": "FantasqueSansMono Nerd Font",
-	"font_size": 16,
+	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
+	"font_face": "Iosevka",
+	"font_size": 15,
 	"ignored_packages":
 	[
 		"Vintage"
