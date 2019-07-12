@@ -71,10 +71,10 @@
 
 # open terminal, blazingly fast compared to iTerm/Hyper
 # cmd - return : open -na /Applications/Kitty.app
-cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile'
+cmd + shift - return : osascript -e 'tell application "iTerm2" to create window with default profile'
 
 # open qutebrowser
-cmd + shift - return : open -na /Applications/qutebrowser.app
+# cmd + shift - return : open -na /Applications/qutebrowser.app
 
 # close focused window
 alt - w : chunkc tiling::window --close
