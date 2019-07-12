@@ -763,4 +763,19 @@ spoon.MiroWindowsManager:bindHotkeys({
 })
 -- }}}
 
+--------------------------------------------------------------------------------
+-- Spoons customization {{{
+--------------------------------------------------------------------------------
+
+-- HACK: Use 10px margin to match my chunkwm configuration
+--       This makes MiroWindowsManager use the margin when resizing a window
+--       to fullscreen but it breaks MiroWindowsManager's multi-step fullscreen
+--       toggling (it compares current window size to the grid size but doesn't
+--       take margin into consideration interally)
+local gridMargin = 10
+hs.grid.MARGINX = gridMargin
+hs.grid.MARGINY = gridMargin
+
+-- }}}
+
 -- vim:foldmethod=marker:foldenable
