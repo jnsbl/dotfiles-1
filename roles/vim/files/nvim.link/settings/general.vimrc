@@ -3,7 +3,7 @@
 
 " set relativenumber
 set number
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:>-,trail:·
 
 if exists("neovim_dot_app")
   "tell the term has 256 colors
