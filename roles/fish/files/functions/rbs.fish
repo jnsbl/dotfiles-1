@@ -1,1 +1,0 @@
-alias rbs='rbenv shell'

@@ -1,1 +1,0 @@
-alias sudl='softwareupdate --list'

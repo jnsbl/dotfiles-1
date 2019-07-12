@@ -1,1 +1,0 @@
-alias fn='find . -name'

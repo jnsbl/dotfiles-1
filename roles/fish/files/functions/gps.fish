@@ -1,1 +1,0 @@
-alias gps='git push'

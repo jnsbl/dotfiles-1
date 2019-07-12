@@ -1,1 +1,0 @@
-alias gunc='git uncommit'

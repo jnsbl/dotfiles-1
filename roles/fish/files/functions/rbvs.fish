@@ -1,1 +1,0 @@
-alias rbvs='rbenv versions'
