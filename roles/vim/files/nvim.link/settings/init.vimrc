@@ -41,7 +41,6 @@ Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/whitespaste.vim'
 
 " Search
-Plug 'rking/ag.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'timakro/vim-searchant'

@@ -74,13 +74,6 @@ let g:startify_list_order = ['files', 'bookmarks', 'sessions', 'commands']
 let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY"
 
 " -----------------------------------------------------------------------------
-" Plugin Settings - Ag
-
-" Open the Ag command and place the cursor into the quotes
-nmap ,ag :Ag ""<Left>
-nmap ,af :AgFile ""<Left>
-
-" -----------------------------------------------------------------------------
 " Plugin Settings - AutoTag
 
 " Seems to have problems with some vim files
@@ -230,19 +223,28 @@ inoremap <expr><Space> pumvisible() ? "\<C-n>\<C-y>" : "\<Space>"
 " -----------------------------------------------------------------------------
 " Plugin Settings - FZF
 
-nnoremap <silent> <Leader>zf :GFiles<cr>
-nnoremap <silent> <Leader>zb :Buffers<cr>
-nnoremap <silent> <Leader>zt :BTags<cr>
-
-nnoremap <silent> <Leader>g :GFiles<cr>
 nnoremap <silent> <Leader>f :Files<cr>
+nnoremap <silent> <Leader>F :GFiles<cr>
+nnoremap <silent> <Leader>G :GFiles?<cr>
 nnoremap <silent> <Leader>b :Buffers<cr>
+nnoremap <silent> <Leader>h :History<cr>
 nnoremap <silent> <Leader>t :BTags<cr>
+nnoremap <silent> <Leader>T :Tags<cr>
+nnoremap <silent> <Leader>l :BLines<cr>
+nnoremap <silent> <Leader>L :Lines<cr>
+nnoremap <silent> <Leader>' :Marks<cr>
+nnoremap <silent> <Leader>a :Ag<Space>
+nnoremap <silent> <Leader>H :Helptags!<cr>
+nnoremap <silent> <Leader>C :Commands<cr>
+nnoremap <silent> <Leader>: :History:<cr>
+nnoremap <silent> <Leader>/ :History/<cr>
+nnoremap <silent> <Leader>M :Maps<cr>
+nnoremap <silent> <Leader>S :Filetypes<cr>
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - ArgWrap
 
-nnoremap <silent> <Leader>a :ArgWrap<CR>
+nnoremap <silent> <Leader>A :ArgWrap<CR>
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - vim-test
