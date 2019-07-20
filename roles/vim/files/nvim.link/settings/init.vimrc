@@ -19,7 +19,7 @@ endif
 let g:python_host_prog = '/Users/jnsbl/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/Users/jnsbl/.pyenv/versions/neovim3/bin/python'
 
-" TODO K pluginum specifickym pro Neovim (napr. Deoplete) najit alternativu pro Vim
+" TODO Find a Vim-supported alternative for Neovim-specific plugins (e.g. Deoplete)
 
 call plug#begin('~/.vim/plugged')
 " General
@@ -51,7 +51,6 @@ Plug 'rizzatti/dash.vim'
 
 " Appearance
 Plug 'chriskempson/base16-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'xsunsmile/showmarks'
 " Required for Gblame in terminal vim
 Plug 'godlygeek/csapprox'
