@@ -14,7 +14,7 @@ if not set -q abbrs_initialized
   abbr bug 'brew upgrade'
   abbr bugl 'brew upgrade; and brew cleanup'
   abbr buo 'brew update; and echo -e "\n**********\nOutdated:\n"; and brew outdated'
-  abbr buoco 'brew update; and echo -e "\n**********\nOutdated:\n"; and brew outdated; and echo -e "\n**********\nOutdated:\n"; and brew cask outdated'
+  abbr buoco 'brew update; and echo -e "\n**********\nOutdated formulae:\n"; and brew outdated; and echo -e "\n**********\nOutdated casks:\n"; and brew cask outdated'
   abbr bucugl 'brew upgrade; and brew cleanup; and brew cask upgrade'
 
   # TODO Use 'jruby -G' instead if JRuby is the current runtime
