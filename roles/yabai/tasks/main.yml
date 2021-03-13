@@ -1,0 +1,37 @@
+---
+- name: Tap into koekeishiya/formulae
+  homebrew_tap:
+ +  tap: koekeishiya/formulae
+    state: present
+
+- name: Install yabai
+  homebrew:
+    name: yabai
+
+- name: Symlink yabairc
+  file:
+    src: "{{ dotfiles_home }}/roles/yabai/files/yabairc"
+    dest: "{{dotfiles_user_home}}/.yabairc"
+    state: link
+
+- name: Start yabai as service
+  command: /usr/local/bin/brew services restart yabai
+
+- name: Install skhd
+  homebrew:
+    name: koekeishiya/formulae/skhd
+
+- name: Symlink skhdrc
+  file:
+    src: "{{ dotfiles_home }}/roles/yabai/files/skhdrc"
+    dest: "{{dotfiles_user_home}}/.skhdrc"
+    state: link
+
+- name: Start skhd as service
+  command: /usr/local/bin/brew services restart skhd
+
+- name: Symlink yabai/skhd helper for BitBar
+  file:
+    src: "{{ dotfiles_home }}/roles/yabai/files/yabai_skhd.1s.sh"
+    dest: "{{dotfiles_user_home}}/.config/bitbar/plugins/yabai_skhd.1s.sh"
+    state: link
