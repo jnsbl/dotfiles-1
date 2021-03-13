@@ -4,6 +4,7 @@
 " set relativenumber
 set number
 set list listchars=tab:>-,trail:·
+set fillchars+=vert:│ " https://github.com/chuling/ci_dark
 
 if exists("neovim_dot_app")
   "tell the term has 256 colors
@@ -52,7 +53,7 @@ set noswapfile
 set nobackup
 set nowb
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set scrolloff=5         "Start scrolling when we're 5 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 

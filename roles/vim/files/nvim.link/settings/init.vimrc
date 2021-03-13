@@ -39,6 +39,10 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'moll/vim-bbye'
 Plug 'sickill/vim-pasta'
 Plug 'AndrewRadev/whitespaste.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'psliwka/vim-smoothie'
+Plug 'simeji/winresizer'
 
 " Search
 Plug 'nelstrom/vim-visual-star-search'
@@ -46,7 +50,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'timakro/vim-searchant'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'rizzatti/dash.vim'
+" Plug 'rizzatti/dash.vim'
 
 " Appearance
 Plug 'chriskempson/base16-vim'
@@ -56,8 +60,11 @@ Plug 'godlygeek/csapprox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'rakr/vim-one'
+" Plug 'rakr/vim-one'
 Plug 'powerman/vim-plugin-AnsiEsc'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'chuling/ci_dark'
+Plug 'luochen1990/rainbow'
 
 " Languages and Syntax highlighting
 " Plug 'vim-ruby/vim-ruby'
@@ -68,16 +75,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-endwise'
-Plug 'airblade/vim-gitgutter'
-Plug 'janko-m/vim-test'
-Plug 'junegunn/gv.vim'
+" Plug 'janko-m/vim-test'
+" Plug 'junegunn/gv.vim'
 Plug 'pearofducks/ansible-vim'
-Plug 'benmills/vimux'
-Plug 'tpope/vim-liquid'
-Plug 'fatih/vim-go'
+" Plug 'benmills/vimux'
+" Plug 'tpope/vim-liquid'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dag/vim-fish'
-Plug 'kchmck/vim-coffee-script'
+" Plug 'kchmck/vim-coffee-script'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 
@@ -90,19 +96,12 @@ Plug 'wellle/targets.vim'
 Plug 'AndrewRadev/dsf.vim'
 
 " Code completion
-" if has('nvim')
-"   function! DoRemote(arg)
-"     UpdateRemotePlugins
-"   endfunction
-"   Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-" else
-"   Plug 'Shougo/neocomplete.nvim'
-" end
-Plug 'lifepillar/vim-mucomplete'
+" Plug 'lifepillar/vim-mucomplete'
 Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if has('python3') || has('python')
   Plug 'SirVer/ultisnips'
-  Plug 'zchee/deoplete-jedi'
+  " Plug 'zchee/deoplete-jedi'
 end
 Plug 'honza/vim-snippets'
 call plug#end()

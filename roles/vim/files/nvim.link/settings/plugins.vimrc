@@ -4,7 +4,7 @@
 set background=dark
 set termguicolors
 let base16colorspace=256
-colorscheme one
+colorscheme ci_dark
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - vim-one
@@ -27,7 +27,7 @@ endtry
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme = 'one'
+let g:airline_theme = 'ci_dark'
 let g:airline#extensions#tmuxline#enabled = 0
 
 " -----------------------------------------------------------------------------
@@ -58,11 +58,11 @@ let g:startify_bookmarks = [
   \ {'v': '~/.config/nvim/settings/init.vimrc'},
   \ {'g': '~/.config/nvim/settings/general.vimrc'},
   \ {'p': '~/.config/nvim/settings/plugins.vimrc'},
-  \ {'y': '~/.pry_history'},
+  \ {'m': '~/.config/nvim/settings/keymap.vimrc'},
   \ {'h': '~/.hammerspoon/init.lua'},
   \ {'t': '~/.tmux.conf'},
   \ {'s': '~/.skhdrc'},
-  \ {'w': '~/.chunkwmrc'},
+  \ {'y': '~/.yabairc'},
   \ {'d': '~/.cdg_paths'},
   \ ]
 let g:startify_list_order = ['files', 'bookmarks', 'sessions', 'commands']
@@ -218,7 +218,7 @@ let g:deoplete#sources._ = []
 " Map standard Ctrl-N completion to Ctrl-Space
 inoremap <C-Space> <C-n>
 
-inoremap <expr><Space> pumvisible() ? "\<C-n>\<C-y>" : "\<Space>"
+" inoremap <expr><Space> pumvisible() ? "\<C-n>\<C-y>" : "\<Space>"
 
 " -----------------------------------------------------------------------------
 " Plugin Settings - FZF
@@ -332,3 +332,88 @@ let g:UltiSnipsJumpForwardTrigger = "<c-b>"  " Do not use <c-j>
 " " resolve conflict with vim-endwise
 " imap <Plug>MyCR <Plug>(MUcompleteCR)
 " imap <cr> <Plug>MyCR
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - vim-peekaboo
+
+let g:peekaboo_window = 'vert bo 80new'
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - coc.nvim
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - coc-git
+
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+" show commit contains current position
+nmap gc <Plug>(coc-git-commit)
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - sideways.vim
+
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - Aerojump
+
+nmap <Leader>as <Plug>(AerojumpSpace)
+nmap <Leader>ab <Plug>(AerojumpBolt)
+nmap <Leader>aa <Plug>(AerojumpFromCursorBolt)
+nmap <Leader>ad <Plug>(AerojumpDefault) " Boring mode
+nmap <Leader><space> <Plug>(AerojumpSpace)
+
+" -----------------------------------------------------------------------------
+" Plugin Settings - winresizer
+
+let g:winresizer_start_key = '<C-T>'
