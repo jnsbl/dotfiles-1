@@ -7,15 +7,17 @@ if not set -q abbrs_initialized
   set -U abbrs_initialized
   echo -n Setting abbreviations...
 
+  abbr apl 'ansible-playbook'
+
   abbr bci 'brew cask install'
   abbr bcl 'brew cleanup'
   abbr bco 'echo -e "\n**********\nOutdated:\n"; and brew cask outdated'
   abbr bcug 'brew cask upgrade'
   abbr bug 'brew upgrade'
-  abbr bugl 'brew upgrade; and brew cleanup'
-  abbr buo 'brew update; and echo -e "\n**********\nOutdated:\n"; and brew outdated'
-  abbr buoco 'brew update; and echo -e "\n**********\nOutdated formulae:\n"; and brew outdated; and echo -e "\n**********\nOutdated casks:\n"; and brew cask outdated'
-  abbr bucugl 'brew upgrade; and brew cleanup; and brew cask upgrade'
+  abbr bugl 'brew upgrade; brew cleanup'
+  abbr buo 'brew update; echo -e "\n**********\nOutdated:\n"; brew outdated'
+  abbr buoco 'brew update; echo -e "\n**********\nOutdated formulae:\n"; brew outdated; echo -e "\n**********\nOutdated casks:\n"; brew cask outdated'
+  abbr bucugl 'brew upgrade; brew cleanup; brew cask upgrade'
 
   # TODO Use 'jruby -G' instead if JRuby is the current runtime
   # see https://github.com/jruby/jruby/wiki/Improving-startup-time#bundle-exec<Paste>
@@ -25,6 +27,7 @@ if not set -q abbrs_initialized
 
   abbr dc 'docker-compose'
   abbr dk 'docker'
+  abbr dkex 'docker exec -it'
   abbr dkps 'docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}"'
   abbr dm 'docker-machine'
 
@@ -68,8 +71,8 @@ if not set -q abbrs_initialized
   abbr hideFiles 'defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
   abbr showFiles 'defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 
-  abbr l 'less -r'
-  abbr lf 'less -r +F'
+  abbr l 'less'
+  abbr lf 'less +F'
 
   if which exa > /dev/null
     abbr ls 'exa'
@@ -108,7 +111,7 @@ if not set -q abbrs_initialized
 
   abbr tas 'tmux attach-session -t'
   abbr tks 'tmux kill-session -t'
-  abbr tnew 'tmux new-session -As $(echo `basename $PWD` | tr '.' '-')' # http://tilvim.com/2014/07/30/tmux-and-vim.html
+  abbr tnew 'tmux new-session -As (echo (basename $PWD) | tr '.' '-')' # http://tilvim.com/2014/07/30/tmux-and-vim.html
 
   abbr vim 'nvim' # use Neovim instead of the original Vim by default
   abbr vvim '/usr/bin/vim' # the real Vim (not Neovim)
