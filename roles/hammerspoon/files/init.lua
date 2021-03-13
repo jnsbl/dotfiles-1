@@ -5,34 +5,33 @@ local super = {"cmd", "ctrl", "alt"}
 -- Caffeine {{{
 --------------------------------------------------------------------------------
 
-caffeine = hs.menubar.new()
-function setCaffeineDisplay(state)
-    if state then
-        caffeine:setTitle("AWAKE")
-    else
-        caffeine:setTitle("SLEEPY")
-    end
-end
+-- caffeine = hs.menubar.new()
+-- function setCaffeineDisplay(state)
+--     if state then
+--         caffeine:setTitle("AWAKE")
+--     else
+--         caffeine:setTitle("SLEEPY")
+--     end
+-- end
+--
+-- function caffeineClicked()
+--     setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
+-- end
+--
+-- if caffeine then
+--     caffeine:setClickCallback(caffeineClicked)
+--     setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
+-- end
+--
+-- hs.hotkey.bind(super, "-", function()
+--   caffeineClicked()
+--   if hs.caffeinate.get("displayIdle") then
+--     hs.notify.show("Caffeine", "AWAKE", "Your Mac will not sleep")
+--   else
+--     hs.notify.show("Caffeine", "SLEEPY", "Your Mac will sleep on its normal schedule")
+--   end
+-- end)
 
-function caffeineClicked()
-    setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
-end
-
-if caffeine then
-    caffeine:setClickCallback(caffeineClicked)
-    setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
-end
-
-hs.hotkey.bind(super, "-", function()
-  caffeineClicked()
-  if hs.caffeinate.get("displayIdle") then
-    hs.notify.show("Caffeine", "AWAKE", "Your Mac will not sleep")
-  else
-    hs.notify.show("Caffeine", "SLEEPY", "Your Mac will sleep on its normal schedule")
-  end
-end)
-
--- TODO Automatically enable caffeine when Skype starts and disable it when Skype quits
 -- }}}
 
 --------------------------------------------------------------------------------
@@ -70,8 +69,7 @@ end
 -- Single keybinding for app launch
 singleApps = {
   {'a', 'Adium'},
-  {'b', 'RubyMine'},
-  {'c', 'Google Chrome'},
+  {'b', 'IntelliJ IDEA'},
   {'d', 'DevDocs'},
   {'e', 'SourceTree'},
   {'f', 'Finder'},
@@ -79,17 +77,15 @@ singleApps = {
   {'i', 'Insomnia'},
   {'k', 'Slack'},
   {'l', 'Sublime Text'},
-  {'m', 'TextMate'},
   {'n', 'FSNotes'},
-  {'o', 'Todoist'},
+  {'o', 'Things'}, -- 'o' as in 'to-do'
   {'p', 'Spotify'},
-  {'q', 'quteBrowser'},
-  {'s', 'Safari'},
+  {'s', 'Brave Browser'}, -- 's' as in browser (and because 's' is easily reachable)
   {'t', 'iTerm'},
-  {'u', 'iTunes'},
+  {'u', 'Music'},
   {'v', 'VimR'},
   {'w', 'Visual Studio Code'},
-  {'x', 'Firefox'},
+  {'x', 'Endel'}, -- 'x' as in 'relax' or similar to a crosshair (~ focus)
   {'y', 'Skype'},
   {'z', 'Spark'},
 }
@@ -99,10 +95,8 @@ for i, app in ipairs(singleApps) do
 end
 
 -- Window movement
-k:bind({}, "Up", function() hs.window.focusedWindow():moveOneScreenNorth(); k:exit(); end)
-k:bind({}, "Down", function() hs.window.focusedWindow():moveOneScreenSouth(); k:exit(); end)
-k:bind({}, "Left", function() hs.window.focusedWindow():moveOneScreenWest(); k:exit(); end)
-k:bind({}, "Right", function() hs.window.focusedWindow():moveOneScreenEast(); k:exit(); end)
+k:bind({}, "Up", function() k:exit(); hs.caffeinate.startScreensaver(); end)
+k:bind({}, "Down", function() hs.caffeinate.lockScreen(); k:exit(); end)
 
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
 pressedF18 = function()
@@ -772,9 +766,9 @@ spoon.MiroWindowsManager:bindHotkeys({
 --       to fullscreen but it breaks MiroWindowsManager's multi-step fullscreen
 --       toggling (it compares current window size to the grid size but doesn't
 --       take margin into consideration interally)
-local gridMargin = 10
-hs.grid.MARGINX = gridMargin
-hs.grid.MARGINY = gridMargin
+-- local gridMargin = 10
+-- hs.grid.MARGINX = gridMargin
+-- hs.grid.MARGINY = gridMargin
 
 -- }}}
 
