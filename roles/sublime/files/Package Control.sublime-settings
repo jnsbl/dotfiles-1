@@ -5,15 +5,18 @@
 	],
 	"installed_packages":
 	[
+		"Base16 Color Schemes",
 		"ChangeQuotes",
 		"Colorsublime",
 		"Dockerfile Syntax Highlighting",
+		"Dracula Color Scheme",
 		"Emmet",
 		"HTML-CSS-JS Prettify",
 		"HTMLEntity Snippets",
 		"Indent XML",
 		"Package Control",
 		"Pretty JSON",
+		"RemoveDuplicateLines",
 		"RuboCop",
 		"SublimeLinter-xmllint",
 		"Table Editor",

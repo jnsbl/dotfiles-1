@@ -1,7 +1,7 @@
 {
-	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
-	"font_face": "Iosevka",
-	"font_size": 15,
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"font_face": "SFMono Nerd Font",
+	"font_size": 13,
 	"ignored_packages":
 	[
 		"Vintage"
