@@ -27,75 +27,93 @@ vim_install_plugins: no
 
 # Utilities that don't get installed by a role
 osx_homebrew_packages:
+  - atool # for ranger
+  - base64
+  - bat
   - cabextract # for winetricks
+  - cloc
+  - coreutils
   - ctags
+  - espanso
+  - exa
+  - exiftool # for ranger
   - fasd
-  - go # for fzf
+  - ffmpeg
   - fish
   - fzf
   - gawk
   - gibo
   - git
+  - git-extras
   - git-flow
+  - glances
+  - gnu-sed
+  - go # for fzf
   - gnutls
   - htop
-  - imagemagick
+  - highlight # for ranger
+  - imagemagick # for ranger
+  - jq # (not only) for ranger
   - libgphoto2 # for wine
   - little-cms2 # for wine
   - libicns # for wine
+  - lolcat # for fish_greeting
   - makedepend # for openssl
   - mas
+  - media-info # for ranger
   - msgpack # for neovim
   - mtr
   - multimarkdown
+  - n
+  - neofetch
   - neovim
   - openssl
   - p7zip
   - sphinx-doc # for python
   - python
+  - ranger
   - reattach-to-user-namespace
   - sane-backends # for wine
   - the_silver_searcher
+  - thefuck
+  - tig
   - tmux
   - tree
-  - unrar
   - texi2html # for zsh
+  - unrar # (not only) for ranger
+  - w3m # for ranger
   - zsh
 
 # Mac Apps to be installed with homebrew-cask
 osx_cask_packages:
   - 1password
-  - adium
   - alfred
   - appcleaner
-  - atext
   - bartender
   - bitbar
+  - brave-browser
   - daisydisk
-  - dash
   - dropbox
-  - evernote
   - filezilla
   - firefox
   - font-fantasquesansmono-nerd-font
-  - get-lyrical
-  - google-chrome
+  - font-firacode-nerd-font
+  - font-jetbrainsmono-nerd-font
+  - font-sf-mono-nerd-font
   - handbrake
+  - hammerspoon
   - insomnia
   - iterm2
   - itsycal
   - karabiner-elements
-  - nvalt
   - robo-3t
   - skype
-  - slack
   - sourcetree
   - spotify
   - spotify-notifications
   - sublime-text
   - the-unarchiver
-  - toggldesktop
-  - ubersicht
+  - toggl
   - veracrypt
   - vimr
   - virtualbox
