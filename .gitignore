@@ -62,3 +62,4 @@ remotehosts
 roles/vim/files/nvim.link/backups
 !roles/vim/files/nvim.link/backups/.keep
 plug.vim.old
+roles/vim/files/nvim.link/sessions
